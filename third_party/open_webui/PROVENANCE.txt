@@ -1,0 +1,34 @@
+# Open WebUI Source Regression
+
+This directory contains two unmodified snapshots of
+`backend/open_webui/utils/middleware.py` from the public
+`open-webui/open-webui` repository.
+
+| Snapshot | Commit | Git blob | SHA-256 |
+|---|---|---|---|
+| `middleware_v0_8_2.py` | `7c7fe443289c3d0307ebbcf320fb1d895c3ee79b` | `7ab7537de2cae7d0c1806ab7b4665d530010ce3d` | `1ffbbfee1b1975cf7cd868899580e11dc39ffc303ee1e229c7f4260786a4256a` |
+| `middleware_v0_8_3.py` | `b8112d72b95e480f946f0688bed29321b61e65af` | `ec7af7733bad4ddb558f57c20edac06cf879943e` | `07fad22b951d912c0b436a098a8def0317810e8283a8f88d0f4eb73f9833b5ed` |
+
+The second blob is introduced by upstream commit
+`f1053d94c7ef7b8b78682dd73586b65a84d202a1`, whose parent is
+`10cfddccd7ae017c7e268820b755e4033e88943a`. It is the only middleware
+change between the two release tags: 26 inserted lines and one deleted line.
+The change retains the message `files` field and converts user image files
+into `image_url` content parts.
+
+Primary sources:
+
+- https://github.com/open-webui/open-webui/issues/21477
+- https://github.com/open-webui/open-webui/commit/f1053d94c7ef7b8b78682dd73586b65a84d202a1
+- https://github.com/open-webui/open-webui/releases/tag/v0.8.2
+- https://github.com/open-webui/open-webui/releases/tag/v0.8.3
+
+`code/scripts/audit_open_webui_source_regression.py` verifies both file
+hashes and Git blob IDs, extracts and executes the exact upstream
+`load_messages_from_db`, `process_messages_with_output`, and fixed image
+injection AST nodes, then applies the released caller-owned contract to the
+emitted local bodies. This is a source-level regression, not a full Open WebUI
+server deployment. It uses synthetic one-pixel images and makes no network,
+provider, or model call.
+
+The upstream license is preserved in `LICENSE`.

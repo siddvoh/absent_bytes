@@ -1,0 +1,115 @@
+{
+  "accepted_mime_types": [
+    "image/jpeg",
+    "image/png",
+    "image/webp"
+  ],
+  "client_response_binding_fields": [
+    "task_id",
+    "canonical_task_text_sha256",
+    "evidence_contract_sha256",
+    "contract_version",
+    "active_parser_field",
+    "correlation_id"
+  ],
+  "active_fields": [
+    "primary_diagnosis",
+    "differentials",
+    "clinical_assessment"
+  ],
+  "contract_fields": [
+    "task_id",
+    "canonical_task_text_sha256",
+    "ordered_decoded_image_mime_types",
+    "ordered_decoded_image_sha256",
+    "active_parser_field"
+  ],
+  "contract_name": "structured-vlm-evidence-field-contract",
+  "contract_version": 2,
+  "failure_action": "block_before_model_invocation",
+  "generator": {
+    "contract_count": 32,
+    "seed": 20260715
+  },
+  "mutations": [
+    {
+      "dimension": "image_count",
+      "expected_reason": "missing_image",
+      "mutation_id": "missing-image"
+    },
+    {
+      "dimension": "decoded_bytes",
+      "expected_reason": "corrupt_image",
+      "mutation_id": "corrupt-bytes"
+    },
+    {
+      "dimension": "mime_type",
+      "expected_reason": "mime_mismatch",
+      "mutation_id": "declared-mime-mismatch"
+    },
+    {
+      "dimension": "caller_contract_mime_type",
+      "expected_reason": "mime_mismatch",
+      "mutation_id": "caller-contract-mime-substitution"
+    },
+    {
+      "dimension": "image_digest",
+      "expected_reason": "digest_mismatch",
+      "mutation_id": "digest-replacement"
+    },
+    {
+      "dimension": "task_evidence_binding",
+      "expected_reason": "wrong_task_image_binding",
+      "mutation_id": "wrong-task-images"
+    },
+    {
+      "dimension": "reference_materialization",
+      "expected_reason": "unresolved_uri",
+      "mutation_id": "unresolved-reference"
+    },
+    {
+      "dimension": "image_count",
+      "expected_reason": "unexpected_extra_image",
+      "mutation_id": "extra-image"
+    },
+    {
+      "dimension": "image_order",
+      "expected_reason": "wrong_image_order",
+      "mutation_id": "reversed-order"
+    },
+    {
+      "dimension": "task_id",
+      "expected_reason": "task_id_mismatch",
+      "mutation_id": "substituted-task-id"
+    },
+    {
+      "dimension": "canonical_task_text",
+      "expected_reason": "task_text_mismatch",
+      "mutation_id": "task-text-substitution"
+    },
+    {
+      "dimension": "client_response_binding_active_field",
+      "expected_reason": "client_response_binding_mismatch",
+      "mutation_id": "active-field-substitution"
+    },
+    {
+      "dimension": "task_role_and_turn",
+      "expected_reason": "task_scope_mismatch",
+      "mutation_id": "task-outside-active-turn"
+    },
+    {
+      "dimension": "evidence_turn",
+      "expected_reason": "evidence_scope_mismatch",
+      "mutation_id": "images-in-prior-turn"
+    }
+  ],
+  "request_scope": "last_user_turn",
+  "response_binding_owner": "caller",
+  "provider_response_fields": [
+    "primary_diagnosis",
+    "differentials",
+    "clinical_assessment"
+  ],
+  "provider_response_schema_scope": "semantic_fields_only",
+  "retry_invariant": "correlation_id_contract_and_serialized_body_digest_unchanged"
+}

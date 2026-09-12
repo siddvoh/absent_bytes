@@ -1,0 +1,12 @@
+domain: dermatology
+categories:
+  - Melanoma
+  - BCC
+  - SCC
+  - Benign_Nevus
+  - Psoriasis
+  - Eczema
+  - Acne
+  - Seborrheic_Keratosis
+  - Normal
+  - Other

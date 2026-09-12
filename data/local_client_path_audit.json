@@ -1,0 +1,996 @@
+{
+  "audit_name": "deterministic loopback client queue handoff audit",
+  "audit_schema_version": 4,
+  "ledger": [
+    {
+      "attempts": [],
+      "case_id": "outside-failed-materialization",
+      "category": "pre_contract",
+      "envelope_created": false,
+      "guard_transport_writes": 0,
+      "loopback_http_requests": 0,
+      "outcome": "outside_detection_boundary",
+      "sdk_serializations": 0,
+      "sink_writes": 0,
+      "stage": "pre_contract_materialization"
+    },
+    {
+      "attempts": [],
+      "case_id": "outside-internally-consistent-wrong-association",
+      "category": "pre_contract",
+      "contract_sha256": "a6f8d0ea241ffcf6a69007c238cb30d6cb4533c5cd72b43f18fa4a0f21707fb8",
+      "correlation_id": "local-correlation-outside-association",
+      "envelope_created": true,
+      "fixture_mime_types": [
+        "image/jpeg"
+      ],
+      "guard_transport_writes": 0,
+      "loopback_http_requests": 0,
+      "outcome": "outside_detection_boundary",
+      "queue_message_sha256": "841ad2f946fc67d9489b0b7dcafb0ced9f8bfbf9ff61b776e273db69ff20716c",
+      "sdk_serializations": 0,
+      "sink_writes": 0,
+      "stage": "pre_contract_association"
+    },
+    {
+      "attempts": [
+        {
+          "anchor_key_id": "local-producer-fixture-v1",
+          "client_id": "fresh-worker-control-png-retry-1-client",
+          "client_response_binding": {
+            "active_field": "primary_diagnosis",
+            "contract_sha256": "c4fd44e354c0bb24601b96624eee1c63c00f7f7d2ad824134dc61bd32df58f74",
+            "contract_version": 1,
+            "correlation_id": "local-correlation-control-png-retry",
+            "task_id": "local-client-control-png-retry",
+            "task_text_sha256": "45e1844d73a918c648c24c0ac095603a7422116daca6cc194289a3d31cb07dd4"
+          },
+          "contract_sha256": "c4fd44e354c0bb24601b96624eee1c63c00f7f7d2ad824134dc61bd32df58f74",
+          "correlation_id": "local-correlation-control-png-retry",
+          "detached_anchor_sha256": "a01f70639883c28e25fb330d7d50c8398624bf82d2996322dcff7e539d7ad904",
+          "detached_anchor_verified": true,
+          "guard_decision": "forwarded",
+          "guard_reason": "evidence_binding_satisfied",
+          "guard_transport_writes": 1,
+          "loopback_http_requests": 1,
+          "queue_message_sha256": "8e7d8c1756106c665c5e43278ebde023e44bef1ae4cb935b22229cc69faa1cf6",
+          "queue_rehydrated_exact_bytes": true,
+          "sdk_body_sha256": "8dc42a126bf0d5a8bc3e13e6dcb7718fe2517c61e487a10ea6ba5fe5bd2e0a6e",
+          "serialized_response_schema": {
+            "additional_properties": false,
+            "forbidden_binding_fields": [],
+            "path": "$.response_format.json_schema.schema",
+            "present": true,
+            "properties": [
+              "clinical_assessment",
+              "differentials",
+              "primary_diagnosis"
+            ],
+            "required": [
+              "primary_diagnosis",
+              "differentials",
+              "clinical_assessment"
+            ],
+            "valid": true
+          },
+          "status_code": 429,
+          "worker_id": "fresh-worker-control-png-retry-1",
+          "worker_process_boundary": true
+        },
+        {
+          "anchor_key_id": "local-producer-fixture-v1",
+          "client_id": "fresh-worker-control-png-retry-2-client",
+          "client_response_binding": {
+            "active_field": "primary_diagnosis",
+            "contract_sha256": "c4fd44e354c0bb24601b96624eee1c63c00f7f7d2ad824134dc61bd32df58f74",
+            "contract_version": 1,
+            "correlation_id": "local-correlation-control-png-retry",
+            "task_id": "local-client-control-png-retry",
+            "task_text_sha256": "45e1844d73a918c648c24c0ac095603a7422116daca6cc194289a3d31cb07dd4"
+          },
+          "contract_sha256": "c4fd44e354c0bb24601b96624eee1c63c00f7f7d2ad824134dc61bd32df58f74",
+          "correlation_id": "local-correlation-control-png-retry",
+          "detached_anchor_sha256": "a01f70639883c28e25fb330d7d50c8398624bf82d2996322dcff7e539d7ad904",
+          "detached_anchor_verified": true,
+          "guard_decision": "forwarded",
+          "guard_reason": "evidence_binding_satisfied",
+          "guard_transport_writes": 1,
+          "loopback_http_requests": 1,
+          "provider_payload_sha256": "d80eb4c5105c66ed19b22b80927d092f7891cef6d49c3dbf571d8a856e9e50eb",
+          "provider_response_id": "loopback-local-client-control-png-retry-control-png-retry",
+          "queue_message_sha256": "8e7d8c1756106c665c5e43278ebde023e44bef1ae4cb935b22229cc69faa1cf6",
+          "queue_rehydrated_exact_bytes": true,
+          "response_receipt_key_id": "local-response-adapter-fixture-v1",
+          "response_receipt_mac_sha256": "282e5929bd13c0f38402734f7ac13cb4000202d8792e479316e75aedcedd3bbb",
+          "sdk_body_sha256": "8dc42a126bf0d5a8bc3e13e6dcb7718fe2517c61e487a10ea6ba5fe5bd2e0a6e",
+          "serialized_response_schema": {
+            "additional_properties": false,
+            "forbidden_binding_fields": [],
+            "path": "$.response_format.json_schema.schema",
+            "present": true,
+            "properties": [
+              "clinical_assessment",
+              "differentials",
+              "primary_diagnosis"
+            ],
+            "required": [
+              "primary_diagnosis",
+              "differentials",
+              "clinical_assessment"
+            ],
+            "valid": true
+          },
+          "status_code": 200,
+          "worker_id": "fresh-worker-control-png-retry-2",
+          "worker_process_boundary": true
+        }
+      ],
+      "case_id": "control-png-retry",
+      "category": "valid_fixture_control",
+      "contract_sha256": "c4fd44e354c0bb24601b96624eee1c63c00f7f7d2ad824134dc61bd32df58f74",
+      "correlation_id": "local-correlation-control-png-retry",
+      "detached_anchor_sha256": "a01f70639883c28e25fb330d7d50c8398624bf82d2996322dcff7e539d7ad904",
+      "envelope_created_after_materialization": true,
+      "fixture_mime_types": [
+        "image/png"
+      ],
+      "fixture_name": "png",
+      "outcome": "forwarded",
+      "parser_invocations": 1,
+      "queue_message_sha256": "8e7d8c1756106c665c5e43278ebde023e44bef1ae4cb935b22229cc69faa1cf6",
+      "sdk_serializations": 2,
+      "sink_writes": 1,
+      "stage": "sdk_guard_and_bound_parser"
+    },
+    {
+      "attempts": [
+        {
+          "anchor_key_id": "local-producer-fixture-v1",
+          "client_id": "fresh-worker-control-jpeg-1-client",
+          "client_response_binding": {
+            "active_field": "primary_diagnosis",
+            "contract_sha256": "c2fb5204454fd3cf0ff6d8562a4bd4ed71a1994c71655958bfc1ea4a9e2659a5",
+            "contract_version": 1,
+            "correlation_id": "local-correlation-control-jpeg",
+            "task_id": "local-client-control-jpeg",
+            "task_text_sha256": "45e1844d73a918c648c24c0ac095603a7422116daca6cc194289a3d31cb07dd4"
+          },
+          "contract_sha256": "c2fb5204454fd3cf0ff6d8562a4bd4ed71a1994c71655958bfc1ea4a9e2659a5",
+          "correlation_id": "local-correlation-control-jpeg",
+          "detached_anchor_sha256": "f2284b4cc0427fa9be40eee02ac4ab37abb1f812df08e0a7342bd1251b183e15",
+          "detached_anchor_verified": true,
+          "guard_decision": "forwarded",
+          "guard_reason": "evidence_binding_satisfied",
+          "guard_transport_writes": 1,
+          "loopback_http_requests": 1,
+          "provider_payload_sha256": "a6375ba446a95817b64fa2fb45f083e864bfc77492ecb648128e1c8a46c7fffd",
+          "provider_response_id": "loopback-local-client-control-jpeg-control-jpeg",
+          "queue_message_sha256": "28e3cc5a46b4eff6e986d8931a4dca0ab076fa5d135b1b9c5029afd688e0fc63",
+          "queue_rehydrated_exact_bytes": true,
+          "response_receipt_key_id": "local-response-adapter-fixture-v1",
+          "response_receipt_mac_sha256": "2e5af358da830f85e20c8394ee50585e79198afc9f1d351f528037dd94805548",
+          "sdk_body_sha256": "325fc2dbdb74ea2f454019440abb4b952274fbaf971f8dfae8730ddb3ec1f01e",
+          "serialized_response_schema": {
+            "additional_properties": false,
+            "forbidden_binding_fields": [],
+            "path": "$.response_format.json_schema.schema",
+            "present": true,
+            "properties": [
+              "clinical_assessment",
+              "differentials",
+              "primary_diagnosis"
+            ],
+            "required": [
+              "primary_diagnosis",
+              "differentials",
+              "clinical_assessment"
+            ],
+            "valid": true
+          },
+          "status_code": 200,
+          "worker_id": "fresh-worker-control-jpeg-1",
+          "worker_process_boundary": true
+        }
+      ],
+      "case_id": "control-jpeg",
+      "category": "valid_fixture_control",
+      "contract_sha256": "c2fb5204454fd3cf0ff6d8562a4bd4ed71a1994c71655958bfc1ea4a9e2659a5",
+      "correlation_id": "local-correlation-control-jpeg",
+      "detached_anchor_sha256": "f2284b4cc0427fa9be40eee02ac4ab37abb1f812df08e0a7342bd1251b183e15",
+      "envelope_created_after_materialization": true,
+      "fixture_mime_types": [
+        "image/jpeg"
+      ],
+      "fixture_name": "jpeg",
+      "outcome": "forwarded",
+      "parser_invocations": 1,
+      "queue_message_sha256": "28e3cc5a46b4eff6e986d8931a4dca0ab076fa5d135b1b9c5029afd688e0fc63",
+      "sdk_serializations": 1,
+      "sink_writes": 0,
+      "stage": "sdk_guard_and_bound_parser"
+    },
+    {
+      "attempts": [
+        {
+          "anchor_key_id": "local-producer-fixture-v1",
+          "client_id": "fresh-worker-control-webp-1-client",
+          "client_response_binding": {
+            "active_field": "primary_diagnosis",
+            "contract_sha256": "18df05868577ee9735f6684329dc4e9386a965718d906731b251ba58c3734346",
+            "contract_version": 1,
+            "correlation_id": "local-correlation-control-webp",
+            "task_id": "local-client-control-webp",
+            "task_text_sha256": "45e1844d73a918c648c24c0ac095603a7422116daca6cc194289a3d31cb07dd4"
+          },
+          "contract_sha256": "18df05868577ee9735f6684329dc4e9386a965718d906731b251ba58c3734346",
+          "correlation_id": "local-correlation-control-webp",
+          "detached_anchor_sha256": "f37e9d0c1f27ef8bf26413c897229e6ff58746b17e03f739f2248c373b718a3d",
+          "detached_anchor_verified": true,
+          "guard_decision": "forwarded",
+          "guard_reason": "evidence_binding_satisfied",
+          "guard_transport_writes": 1,
+          "loopback_http_requests": 1,
+          "provider_payload_sha256": "de45898b53d82e26a6afe274b1da631bf64a244c6d51886276ef5055725bbb1f",
+          "provider_response_id": "loopback-local-client-control-webp-control-webp",
+          "queue_message_sha256": "a0864064444460b83a10b725d202e3df5530ec99cef0cbb4241cca9b7e16f810",
+          "queue_rehydrated_exact_bytes": true,
+          "response_receipt_key_id": "local-response-adapter-fixture-v1",
+          "response_receipt_mac_sha256": "cbe557de75c1713e6fe2c8d9267dcf2b550f744003b971fc85fea9c70b40af3e",
+          "sdk_body_sha256": "327bb9a1ceb58689c9b24f63a9614404cf43659c675c957bdcf0190a2131a6f4",
+          "serialized_response_schema": {
+            "additional_properties": false,
+            "forbidden_binding_fields": [],
+            "path": "$.response_format.json_schema.schema",
+            "present": true,
+            "properties": [
+              "clinical_assessment",
+              "differentials",
+              "primary_diagnosis"
+            ],
+            "required": [
+              "primary_diagnosis",
+              "differentials",
+              "clinical_assessment"
+            ],
+            "valid": true
+          },
+          "status_code": 200,
+          "worker_id": "fresh-worker-control-webp-1",
+          "worker_process_boundary": true
+        }
+      ],
+      "case_id": "control-webp",
+      "category": "valid_fixture_control",
+      "contract_sha256": "18df05868577ee9735f6684329dc4e9386a965718d906731b251ba58c3734346",
+      "correlation_id": "local-correlation-control-webp",
+      "detached_anchor_sha256": "f37e9d0c1f27ef8bf26413c897229e6ff58746b17e03f739f2248c373b718a3d",
+      "envelope_created_after_materialization": true,
+      "fixture_mime_types": [
+        "image/webp"
+      ],
+      "fixture_name": "webp",
+      "outcome": "forwarded",
+      "parser_invocations": 1,
+      "queue_message_sha256": "a0864064444460b83a10b725d202e3df5530ec99cef0cbb4241cca9b7e16f810",
+      "sdk_serializations": 1,
+      "sink_writes": 0,
+      "stage": "sdk_guard_and_bound_parser"
+    },
+    {
+      "attempts": [
+        {
+          "anchor_key_id": "local-producer-fixture-v1",
+          "client_id": "fresh-worker-response-pair-a-client",
+          "client_response_binding": {
+            "active_field": "primary_diagnosis",
+            "contract_sha256": "6b76d44eaad05359f54d62aa8a96c964072f548530060efeffe704ee5358dfe1",
+            "contract_version": 1,
+            "correlation_id": "local-correlation-response-pair-a",
+            "task_id": "local-client-response-pair-shared",
+            "task_text_sha256": "45e1844d73a918c648c24c0ac095603a7422116daca6cc194289a3d31cb07dd4"
+          },
+          "contract_sha256": "6b76d44eaad05359f54d62aa8a96c964072f548530060efeffe704ee5358dfe1",
+          "correlation_id": "local-correlation-response-pair-a",
+          "detached_anchor_sha256": "77f685096acd9f5da7c5c63d7ca9051569e6c31f8d93b3d4e8951edd74bf5e0b",
+          "detached_anchor_verified": true,
+          "guard_decision": "forwarded",
+          "guard_reason": "evidence_binding_satisfied",
+          "guard_transport_writes": 1,
+          "loopback_http_requests": 1,
+          "provider_payload_sha256": "9b8c41f7212e65c1cfa125db67265280e53d540a394a45c4ad0bd8f9f62c55e7",
+          "provider_response_id": "loopback-local-client-response-pair-shared-response-pair-a",
+          "queue_message_sha256": "9813b0dfe0c84c995fd6b35f3627114d9bb45b48d3f988ba4384ada8ea61635f",
+          "queue_rehydrated_exact_bytes": true,
+          "response_receipt_key_id": "local-response-adapter-fixture-v1",
+          "response_receipt_mac_sha256": "a1abd3fb0e6257cc7a56a4a96c4b4d699da88a36503896b19f5d87535444cf64",
+          "sdk_body_sha256": "6922127659bd501ed17666bf5caa75461477cdc1be94f3ccd0df4d72193b2625",
+          "serialized_response_schema": {
+            "additional_properties": false,
+            "forbidden_binding_fields": [],
+            "path": "$.response_format.json_schema.schema",
+            "present": true,
+            "properties": [
+              "clinical_assessment",
+              "differentials",
+              "primary_diagnosis"
+            ],
+            "required": [
+              "primary_diagnosis",
+              "differentials",
+              "clinical_assessment"
+            ],
+            "valid": true
+          },
+          "status_code": 200,
+          "worker_id": "fresh-worker-response-pair-a",
+          "worker_process_boundary": true
+        },
+        {
+          "anchor_key_id": "local-producer-fixture-v1",
+          "client_id": "fresh-worker-response-pair-b-client",
+          "client_response_binding": {
+            "active_field": "primary_diagnosis",
+            "contract_sha256": "6b76d44eaad05359f54d62aa8a96c964072f548530060efeffe704ee5358dfe1",
+            "contract_version": 1,
+            "correlation_id": "local-correlation-response-pair-b",
+            "task_id": "local-client-response-pair-shared",
+            "task_text_sha256": "45e1844d73a918c648c24c0ac095603a7422116daca6cc194289a3d31cb07dd4"
+          },
+          "contract_sha256": "6b76d44eaad05359f54d62aa8a96c964072f548530060efeffe704ee5358dfe1",
+          "correlation_id": "local-correlation-response-pair-b",
+          "detached_anchor_sha256": "906676cfb357c6ad4c03f6b0b0769fce00ac169406d7217f59e8612bd8bdc287",
+          "detached_anchor_verified": true,
+          "guard_decision": "forwarded",
+          "guard_reason": "evidence_binding_satisfied",
+          "guard_transport_writes": 1,
+          "loopback_http_requests": 1,
+          "provider_payload_sha256": "b47d6af2dafb0480f126d6cd644ce594f650b926e5b648cce61cfbccbc1f7571",
+          "provider_response_id": "loopback-local-client-response-pair-shared-response-pair-b",
+          "queue_message_sha256": "79fc521b322b033190ccc9db4351b7bcf1c2c7c7bde5803f1748fd5ca25b5cc8",
+          "queue_rehydrated_exact_bytes": true,
+          "response_receipt_key_id": "local-response-adapter-fixture-v1",
+          "response_receipt_mac_sha256": "bc77ba1a18d1e868a6d13f39af0679cb72977d67bdd1175c19a8e82a57f172c5",
+          "sdk_body_sha256": "da387a3e4a78775ff4cd18e4c6bba057262317baac65d644dae3b1bff98909ad",
+          "serialized_response_schema": {
+            "additional_properties": false,
+            "forbidden_binding_fields": [],
+            "path": "$.response_format.json_schema.schema",
+            "present": true,
+            "properties": [
+              "clinical_assessment",
+              "differentials",
+              "primary_diagnosis"
+            ],
+            "required": [
+              "primary_diagnosis",
+              "differentials",
+              "clinical_assessment"
+            ],
+            "valid": true
+          },
+          "status_code": 200,
+          "worker_id": "fresh-worker-response-pair-b",
+          "worker_process_boundary": true
+        }
+      ],
+      "case_id": "response-association-pair",
+      "category": "trusted_response_association",
+      "contract_sha256": "6b76d44eaad05359f54d62aa8a96c964072f548530060efeffe704ee5358dfe1",
+      "correlation_ids": [
+        "local-correlation-response-pair-a",
+        "local-correlation-response-pair-b"
+      ],
+      "distinct_provider_response_ids": 2,
+      "envelope_created_after_materialization": true,
+      "matched_parses": 2,
+      "outcome": "matched_forwarded_swaps_rejected",
+      "parser_invocations": 6,
+      "queue_message_sha256": [
+        "9813b0dfe0c84c995fd6b35f3627114d9bb45b48d3f988ba4384ada8ea61635f",
+        "79fc521b322b033190ccc9db4351b7bcf1c2c7c7bde5803f1748fd5ca25b5cc8"
+      ],
+      "response_association_faults": 4,
+      "response_association_rejections": 4,
+      "sdk_serializations": 2,
+      "sink_writes": 2,
+      "stage": "trusted_completion_and_bound_parser",
+      "swap_extractions": 0,
+      "swap_results": [
+        {
+          "outcome": "parser_rejected",
+          "reason": "response binding does not match parser contract",
+          "variant": "complete-b-to-parser-a"
+        },
+        {
+          "outcome": "parser_rejected",
+          "reason": "response binding does not match parser contract",
+          "variant": "complete-a-to-parser-b"
+        },
+        {
+          "outcome": "parser_rejected",
+          "reason": "response receipt does not match dispatch",
+          "variant": "payload-b-with-origin-receipt-under-a"
+        },
+        {
+          "outcome": "parser_rejected",
+          "reason": "response payload does not match trusted receipt",
+          "variant": "payload-b-with-destination-receipt-under-a"
+        }
+      ],
+      "swap_sink_writes": 0
+    },
+    {
+      "attempts": [],
+      "case_id": "queue-dropped-bytes",
+      "category": "post_contract_queue_tampering",
+      "contract_sha256": "19d6f0afed25e6b3b90141a6a40e015f9d688ed33666aaa8331b32df92647b6f",
+      "correlation_id": "local-correlation-queue-dropped-bytes",
+      "envelope_created_after_materialization": true,
+      "guard_transport_writes": 0,
+      "loopback_http_requests": 0,
+      "outcome": "envelope_rejected",
+      "queue_message_sha256": "ca9476d5f7554eefa20e639fcbea885f899a4065e877344f931a2324243f8147",
+      "reason": "image MIME does not match decoded bytes",
+      "sdk_serializations": 0,
+      "sink_writes": 0,
+      "stage": "queue_envelope_verification",
+      "tampering": "dropped_bytes"
+    },
+    {
+      "attempts": [],
+      "case_id": "queue-replaced-bytes-digest",
+      "category": "post_contract_queue_tampering",
+      "contract_sha256": "c0aaec046a3609de7136ac5e2f5c3ae027a6167492e5459ee97a99616a6b2b07",
+      "correlation_id": "local-correlation-queue-replaced-bytes-digest",
+      "envelope_created_after_materialization": true,
+      "guard_transport_writes": 0,
+      "loopback_http_requests": 0,
+      "outcome": "envelope_rejected",
+      "queue_message_sha256": "a2623fb54ee56ab7787f4488af466e4065d6cc82e601235ac61e7edb5bc07f31",
+      "reason": "materialized evidence does not match contract",
+      "sdk_serializations": 0,
+      "sink_writes": 0,
+      "stage": "queue_envelope_verification",
+      "tampering": "replaced_bytes_and_digest"
+    },
+    {
+      "attempts": [],
+      "case_id": "queue-caller-mime",
+      "category": "post_contract_queue_tampering",
+      "contract_sha256": "048a0c6d4ceb28895148158859f0699406e6dfe8b49220b4ffca09116c6d4cab",
+      "correlation_id": "local-correlation-queue-caller-mime",
+      "envelope_created_after_materialization": true,
+      "guard_transport_writes": 0,
+      "loopback_http_requests": 0,
+      "outcome": "envelope_rejected",
+      "queue_message_sha256": "23e35aaf4dd69f520e34240f4bedc50eb7ba83bc9425f6e52adcca625dee90ae",
+      "reason": "image MIME does not match decoded bytes",
+      "sdk_serializations": 0,
+      "sink_writes": 0,
+      "stage": "queue_envelope_verification",
+      "tampering": "caller_mime"
+    },
+    {
+      "attempts": [],
+      "case_id": "queue-task-text",
+      "category": "post_contract_queue_tampering",
+      "contract_sha256": "e8889660107aaa61cb4381e745fcec03b42d257619ca8a734120c15c9e299d66",
+      "correlation_id": "local-correlation-queue-task-text",
+      "envelope_created_after_materialization": true,
+      "guard_transport_writes": 0,
+      "loopback_http_requests": 0,
+      "outcome": "envelope_rejected",
+      "queue_message_sha256": "29da82e695422ede4351ca10fc1df33f035d5c542486a3ff1313ffd95b01a4a0",
+      "reason": "task text does not match its commitment",
+      "sdk_serializations": 0,
+      "sink_writes": 0,
+      "stage": "queue_envelope_verification",
+      "tampering": "task_text"
+    },
+    {
+      "attempts": [],
+      "case_id": "queue-image-order",
+      "category": "post_contract_queue_tampering",
+      "contract_sha256": "faf56f9c84044c309a23127f88f1b800d0b7ee94f9f674fbe4728c12f89f1dfb",
+      "correlation_id": "local-correlation-queue-image-order",
+      "envelope_created_after_materialization": true,
+      "guard_transport_writes": 0,
+      "loopback_http_requests": 0,
+      "outcome": "envelope_rejected",
+      "queue_message_sha256": "2abf54334e65f6153ea9a511f1a1d572d5e857a6e34d1c9f5f54648a79718242",
+      "reason": "materialized evidence does not match contract",
+      "sdk_serializations": 0,
+      "sink_writes": 0,
+      "stage": "queue_envelope_verification",
+      "tampering": "image_order"
+    },
+    {
+      "attempts": [],
+      "case_id": "anchor-coherent-rewrite",
+      "category": "post_contract_detached_anchor_tampering",
+      "contract_sha256": "8899009c9c37229091d2fe3ef13c9125471bc87d39cbe5c35da389840f8fce7f",
+      "correlation_id": "local-correlation-anchor-coherent-rewrite",
+      "detached_anchor_sha256": "475674c75b3b018f7e3d9b6c8ec88d4ac6e5418af5cb89472a472a3c8e39b6da",
+      "envelope_created_after_materialization": true,
+      "guard_transport_writes": 0,
+      "internally_valid_queue_envelope": true,
+      "loopback_http_requests": 0,
+      "outcome": "detached_anchor_rejected",
+      "queue_message_sha256": "b433b296b62655011ad7afe798bab608c7f62f029cc44c984a8f87aa6b3c7008",
+      "reason": "queue message does not match trusted anchor",
+      "sdk_serializations": 0,
+      "sink_writes": 0,
+      "stage": "detached_producer_anchor_verification",
+      "tampering": "coherent_rewrite",
+      "worker_process_boundary": true
+    },
+    {
+      "attempts": [],
+      "case_id": "anchor-forged-mac",
+      "category": "post_contract_detached_anchor_tampering",
+      "contract_sha256": "cb7f742fb667981ad44598e817c9846fb89d91452d3f47f69526710ca31e7eb1",
+      "correlation_id": "local-correlation-anchor-forged-mac",
+      "detached_anchor_sha256": "27af2d5950fba27f0e6fec81721e042bf8ca1344be761676e70911fe29ad9a49",
+      "envelope_created_after_materialization": true,
+      "guard_transport_writes": 0,
+      "internally_valid_queue_envelope": true,
+      "loopback_http_requests": 0,
+      "outcome": "detached_anchor_rejected",
+      "queue_message_sha256": "88d5b0874eb8622eb4b5ad46087f279f11d745dbca959eb01cca7faa0060a87a",
+      "reason": "dispatch anchor authentication failed",
+      "sdk_serializations": 0,
+      "sink_writes": 0,
+      "stage": "detached_producer_anchor_verification",
+      "tampering": "forged_anchor",
+      "worker_process_boundary": true
+    },
+    {
+      "attempts": [],
+      "case_id": "anchor-cross-job-mismatch",
+      "category": "post_contract_detached_anchor_tampering",
+      "contract_sha256": "5898a5e91e37ad222aa192b5102255e4990336a3a10f769b16a210c59efeee6f",
+      "correlation_id": "local-correlation-anchor-cross-job-mismatch",
+      "detached_anchor_sha256": "9b3d0127b199a84d4305029915615a845bde4de12fe3da4aae19dca5619ff40a",
+      "envelope_created_after_materialization": true,
+      "guard_transport_writes": 0,
+      "internally_valid_queue_envelope": true,
+      "loopback_http_requests": 0,
+      "outcome": "detached_anchor_rejected",
+      "queue_message_sha256": "e9c317063e8a942536a28b6aabc9464420c74b3da31252b89c6f59fc2a28230c",
+      "reason": "queue message does not match trusted anchor",
+      "sdk_serializations": 0,
+      "sink_writes": 0,
+      "stage": "detached_producer_anchor_verification",
+      "tampering": "cross_job_anchor_mismatch",
+      "worker_process_boundary": true
+    },
+    {
+      "attempts": [
+        {
+          "anchor_key_id": "local-producer-fixture-v1",
+          "client_id": "fresh-worker-sdk-text-only-1-client",
+          "client_response_binding": {
+            "active_field": "primary_diagnosis",
+            "contract_sha256": "88f2e1b3690dfb32708f1d861a17349e103686636b1da1e92f451facff37f84e",
+            "contract_version": 1,
+            "correlation_id": "local-correlation-sdk-text-only",
+            "task_id": "local-client-sdk-text-only",
+            "task_text_sha256": "45e1844d73a918c648c24c0ac095603a7422116daca6cc194289a3d31cb07dd4"
+          },
+          "contract_sha256": "88f2e1b3690dfb32708f1d861a17349e103686636b1da1e92f451facff37f84e",
+          "correlation_id": "local-correlation-sdk-text-only",
+          "detached_anchor_sha256": "7706fa182e3d26e486fe8df086682b484fc396a7b9ceed98e9286a898d6d991e",
+          "detached_anchor_verified": true,
+          "guard_decision": "blocked",
+          "guard_reason": "missing_image",
+          "guard_transport_writes": 1,
+          "loopback_http_requests": 0,
+          "queue_message_sha256": "58683d9b08cc8061bc9bac139d70c3ecfa93d453295bcb15f43802a68085fcfe",
+          "queue_rehydrated_exact_bytes": true,
+          "sdk_body_sha256": "0e606f50de32d1eee534ad3bf54a11d5b90942989da21004086f63258d67adda",
+          "serialized_response_schema": {
+            "additional_properties": false,
+            "forbidden_binding_fields": [],
+            "path": "$.response_format.json_schema.schema",
+            "present": true,
+            "properties": [
+              "clinical_assessment",
+              "differentials",
+              "primary_diagnosis"
+            ],
+            "required": [
+              "primary_diagnosis",
+              "differentials",
+              "clinical_assessment"
+            ],
+            "valid": true
+          },
+          "status_code": 200,
+          "worker_id": "fresh-worker-sdk-text-only-1",
+          "worker_process_boundary": true
+        }
+      ],
+      "case_id": "sdk-text-only",
+      "category": "post_contract_sdk_body_tampering",
+      "contract_sha256": "88f2e1b3690dfb32708f1d861a17349e103686636b1da1e92f451facff37f84e",
+      "correlation_id": "local-correlation-sdk-text-only",
+      "detached_anchor_sha256": "7706fa182e3d26e486fe8df086682b484fc396a7b9ceed98e9286a898d6d991e",
+      "envelope_created_after_materialization": true,
+      "guard_transport_writes": 1,
+      "loopback_http_requests": 0,
+      "outcome": "blocked",
+      "queue_message_sha256": "58683d9b08cc8061bc9bac139d70c3ecfa93d453295bcb15f43802a68085fcfe",
+      "reason": "missing_image",
+      "sdk_serializations": 1,
+      "sink_writes": 0,
+      "stage": "sdk_body_guard",
+      "tampering": "text_only"
+    },
+    {
+      "attempts": [
+        {
+          "anchor_key_id": "local-producer-fixture-v1",
+          "client_id": "fresh-worker-sdk-wrong-task-text-1-client",
+          "client_response_binding": {
+            "active_field": "primary_diagnosis",
+            "contract_sha256": "bfb514e8119cd9b23136c1f63ea29f4363bd4a835d9285eb805e95dc0c5e70bb",
+            "contract_version": 1,
+            "correlation_id": "local-correlation-sdk-wrong-task-text",
+            "task_id": "local-client-sdk-wrong-task-text",
+            "task_text_sha256": "45e1844d73a918c648c24c0ac095603a7422116daca6cc194289a3d31cb07dd4"
+          },
+          "contract_sha256": "bfb514e8119cd9b23136c1f63ea29f4363bd4a835d9285eb805e95dc0c5e70bb",
+          "correlation_id": "local-correlation-sdk-wrong-task-text",
+          "detached_anchor_sha256": "ffe2d285abf2b9f9507c29f7be0daf37fa9afaa03dfa6b214bee6a0564a13a50",
+          "detached_anchor_verified": true,
+          "guard_decision": "blocked",
+          "guard_reason": "task_text_mismatch",
+          "guard_transport_writes": 1,
+          "loopback_http_requests": 0,
+          "queue_message_sha256": "1110fa2ee91e20f40e3cb96dd0af72190d04121c8a67b04984515f42220fa668",
+          "queue_rehydrated_exact_bytes": true,
+          "sdk_body_sha256": "2bff4aedfa37d541564725657bf38879e82b5bc3714fec4faf3314a640ee3cf3",
+          "serialized_response_schema": {
+            "additional_properties": false,
+            "forbidden_binding_fields": [],
+            "path": "$.response_format.json_schema.schema",
+            "present": true,
+            "properties": [
+              "clinical_assessment",
+              "differentials",
+              "primary_diagnosis"
+            ],
+            "required": [
+              "primary_diagnosis",
+              "differentials",
+              "clinical_assessment"
+            ],
+            "valid": true
+          },
+          "status_code": 200,
+          "worker_id": "fresh-worker-sdk-wrong-task-text-1",
+          "worker_process_boundary": true
+        }
+      ],
+      "case_id": "sdk-wrong-task-text",
+      "category": "post_contract_sdk_body_tampering",
+      "contract_sha256": "bfb514e8119cd9b23136c1f63ea29f4363bd4a835d9285eb805e95dc0c5e70bb",
+      "correlation_id": "local-correlation-sdk-wrong-task-text",
+      "detached_anchor_sha256": "ffe2d285abf2b9f9507c29f7be0daf37fa9afaa03dfa6b214bee6a0564a13a50",
+      "envelope_created_after_materialization": true,
+      "guard_transport_writes": 1,
+      "loopback_http_requests": 0,
+      "outcome": "blocked",
+      "queue_message_sha256": "1110fa2ee91e20f40e3cb96dd0af72190d04121c8a67b04984515f42220fa668",
+      "reason": "task_text_mismatch",
+      "sdk_serializations": 1,
+      "sink_writes": 0,
+      "stage": "sdk_body_guard",
+      "tampering": "wrong_task_text"
+    },
+    {
+      "attempts": [
+        {
+          "anchor_key_id": "local-producer-fixture-v1",
+          "client_id": "fresh-worker-sdk-wrong-turn-1-client",
+          "client_response_binding": {
+            "active_field": "primary_diagnosis",
+            "contract_sha256": "a81b0322b94f5f177df7d68262c4da84e395f6789e3e19a93063b16cd1c5317d",
+            "contract_version": 1,
+            "correlation_id": "local-correlation-sdk-wrong-turn",
+            "task_id": "local-client-sdk-wrong-turn",
+            "task_text_sha256": "45e1844d73a918c648c24c0ac095603a7422116daca6cc194289a3d31cb07dd4"
+          },
+          "contract_sha256": "a81b0322b94f5f177df7d68262c4da84e395f6789e3e19a93063b16cd1c5317d",
+          "correlation_id": "local-correlation-sdk-wrong-turn",
+          "detached_anchor_sha256": "258e8d0e7c3d8b201705c20e1de7804c6d5271cbe464accadce8ac260ae9b7bd",
+          "detached_anchor_verified": true,
+          "guard_decision": "blocked",
+          "guard_reason": "evidence_scope_mismatch",
+          "guard_transport_writes": 1,
+          "loopback_http_requests": 0,
+          "queue_message_sha256": "656fb322825e5c0e3c923b9fb9c63f56735b6d582ec8965f63140271037c0f4b",
+          "queue_rehydrated_exact_bytes": true,
+          "sdk_body_sha256": "400e7ee6e447241716857e5db73a963eeb4097cc6dc2c585a161121fb7f3913e",
+          "serialized_response_schema": {
+            "additional_properties": false,
+            "forbidden_binding_fields": [],
+            "path": "$.response_format.json_schema.schema",
+            "present": true,
+            "properties": [
+              "clinical_assessment",
+              "differentials",
+              "primary_diagnosis"
+            ],
+            "required": [
+              "primary_diagnosis",
+              "differentials",
+              "clinical_assessment"
+            ],
+            "valid": true
+          },
+          "status_code": 200,
+          "worker_id": "fresh-worker-sdk-wrong-turn-1",
+          "worker_process_boundary": true
+        }
+      ],
+      "case_id": "sdk-wrong-turn",
+      "category": "post_contract_sdk_body_tampering",
+      "contract_sha256": "a81b0322b94f5f177df7d68262c4da84e395f6789e3e19a93063b16cd1c5317d",
+      "correlation_id": "local-correlation-sdk-wrong-turn",
+      "detached_anchor_sha256": "258e8d0e7c3d8b201705c20e1de7804c6d5271cbe464accadce8ac260ae9b7bd",
+      "envelope_created_after_materialization": true,
+      "guard_transport_writes": 1,
+      "loopback_http_requests": 0,
+      "outcome": "blocked",
+      "queue_message_sha256": "656fb322825e5c0e3c923b9fb9c63f56735b6d582ec8965f63140271037c0f4b",
+      "reason": "evidence_scope_mismatch",
+      "sdk_serializations": 1,
+      "sink_writes": 0,
+      "stage": "sdk_body_guard",
+      "tampering": "wrong_turn"
+    },
+    {
+      "attempts": [
+        {
+          "anchor_key_id": "local-producer-fixture-v1",
+          "client_id": "fresh-worker-sdk-active-field-1-client",
+          "client_response_binding": {
+            "active_field": "differentials",
+            "contract_sha256": "374b39846b0ee720c79f15c66202fc95c29b8ab693e5a8adb2193b0fc89d4e97",
+            "contract_version": 1,
+            "correlation_id": "local-correlation-sdk-active-field",
+            "task_id": "local-client-sdk-active-field",
+            "task_text_sha256": "45e1844d73a918c648c24c0ac095603a7422116daca6cc194289a3d31cb07dd4"
+          },
+          "contract_sha256": "374b39846b0ee720c79f15c66202fc95c29b8ab693e5a8adb2193b0fc89d4e97",
+          "correlation_id": "local-correlation-sdk-active-field",
+          "detached_anchor_sha256": "0056b802dd56556de942c7e4a6f862a33c02d9f3f24ecdb5048649cb32edf530",
+          "detached_anchor_verified": true,
+          "guard_decision": "blocked",
+          "guard_reason": "client_response_binding_mismatch",
+          "guard_transport_writes": 1,
+          "loopback_http_requests": 0,
+          "queue_message_sha256": "a580ec541acfb4354b9deb773fce508bc14a33d652a8bb731c2985393a45a5a4",
+          "queue_rehydrated_exact_bytes": true,
+          "sdk_body_sha256": "59cbe3d63a555c32266050a8ab55af0d76d3672f4080005533147594c2048cc1",
+          "serialized_response_schema": {
+            "additional_properties": false,
+            "forbidden_binding_fields": [],
+            "path": "$.response_format.json_schema.schema",
+            "present": true,
+            "properties": [
+              "clinical_assessment",
+              "differentials",
+              "primary_diagnosis"
+            ],
+            "required": [
+              "primary_diagnosis",
+              "differentials",
+              "clinical_assessment"
+            ],
+            "valid": true
+          },
+          "status_code": 200,
+          "worker_id": "fresh-worker-sdk-active-field-1",
+          "worker_process_boundary": true
+        }
+      ],
+      "case_id": "sdk-active-field",
+      "category": "post_contract_sdk_body_tampering",
+      "contract_sha256": "374b39846b0ee720c79f15c66202fc95c29b8ab693e5a8adb2193b0fc89d4e97",
+      "correlation_id": "local-correlation-sdk-active-field",
+      "detached_anchor_sha256": "0056b802dd56556de942c7e4a6f862a33c02d9f3f24ecdb5048649cb32edf530",
+      "envelope_created_after_materialization": true,
+      "guard_transport_writes": 1,
+      "loopback_http_requests": 0,
+      "outcome": "blocked",
+      "queue_message_sha256": "a580ec541acfb4354b9deb773fce508bc14a33d652a8bb731c2985393a45a5a4",
+      "reason": "client_response_binding_mismatch",
+      "sdk_serializations": 1,
+      "sink_writes": 0,
+      "stage": "sdk_body_guard",
+      "tampering": "active_field"
+    },
+    {
+      "attempts": [
+        {
+          "anchor_key_id": "local-producer-fixture-v1",
+          "client_id": "fresh-worker-post-guard-client-response-binding-1-client",
+          "client_response_binding": {
+            "active_field": "primary_diagnosis",
+            "contract_sha256": "7a52023fdb1793290790696b0fb87b036aa7ebc05eceaeedb9c0c2124de7c2e7",
+            "contract_version": 1,
+            "correlation_id": "local-correlation-post-guard-client-response-binding",
+            "task_id": "local-client-post-guard-client-response-binding",
+            "task_text_sha256": "45e1844d73a918c648c24c0ac095603a7422116daca6cc194289a3d31cb07dd4"
+          },
+          "contract_sha256": "7a52023fdb1793290790696b0fb87b036aa7ebc05eceaeedb9c0c2124de7c2e7",
+          "correlation_id": "local-correlation-post-guard-client-response-binding",
+          "detached_anchor_sha256": "bec69b73507f7eafdb8b9569bf30a88157dfa2b1daf7db465a207d43ffe2d7c9",
+          "detached_anchor_verified": true,
+          "guard_decision": "forwarded",
+          "guard_reason": "evidence_binding_satisfied",
+          "guard_transport_writes": 1,
+          "loopback_http_requests": 1,
+          "provider_payload_sha256": "ffbacd5109f504ac2c18cf2d3920850344ff40784db8303a956ebca3d366272c",
+          "provider_response_id": "loopback-local-client-post-guard-client-response-binding-post-guard-client-response-binding",
+          "queue_message_sha256": "9173b4909ffb7c11a17b269c7088ac1d305fd0a550b25fea12d205c331d3a0f4",
+          "queue_rehydrated_exact_bytes": true,
+          "response_receipt_key_id": "local-response-adapter-fixture-v1",
+          "response_receipt_mac_sha256": "9e2e6ad93a21baa2e212cbe5c28be9e176e88abb3a01c64dbf6868c534878979",
+          "sdk_body_sha256": "9c017fa335f631bbc908b08adcbb438a600b90c2b996983a698f69eaf329ad44",
+          "serialized_response_schema": {
+            "additional_properties": false,
+            "forbidden_binding_fields": [],
+            "path": "$.response_format.json_schema.schema",
+            "present": true,
+            "properties": [
+              "clinical_assessment",
+              "differentials",
+              "primary_diagnosis"
+            ],
+            "required": [
+              "primary_diagnosis",
+              "differentials",
+              "clinical_assessment"
+            ],
+            "valid": true
+          },
+          "status_code": 200,
+          "worker_id": "fresh-worker-post-guard-client-response-binding-1",
+          "worker_process_boundary": true
+        }
+      ],
+      "case_id": "post-guard-client-response-binding",
+      "category": "post_guard_response_or_parser_drift",
+      "contract_sha256": "7a52023fdb1793290790696b0fb87b036aa7ebc05eceaeedb9c0c2124de7c2e7",
+      "correlation_id": "local-correlation-post-guard-client-response-binding",
+      "detached_anchor_sha256": "bec69b73507f7eafdb8b9569bf30a88157dfa2b1daf7db465a207d43ffe2d7c9",
+      "envelope_created_after_materialization": true,
+      "guard_transport_writes": 1,
+      "loopback_http_requests": 1,
+      "outcome": "parser_rejected",
+      "parser_invocations": 1,
+      "queue_message_sha256": "9173b4909ffb7c11a17b269c7088ac1d305fd0a550b25fea12d205c331d3a0f4",
+      "reason": "response binding does not match parser contract",
+      "sdk_serializations": 1,
+      "sink_writes": 0,
+      "stage": "post_guard_bound_parser",
+      "tampering": "client_response_binding"
+    },
+    {
+      "attempts": [
+        {
+          "anchor_key_id": "local-producer-fixture-v1",
+          "client_id": "fresh-worker-post-guard-parser-field-1-client",
+          "client_response_binding": {
+            "active_field": "primary_diagnosis",
+            "contract_sha256": "109f43a3f77d4ff302b79d05b2298f5c56c2fbcf1e514e65e6c57e3af5b82d69",
+            "contract_version": 1,
+            "correlation_id": "local-correlation-post-guard-parser-field",
+            "task_id": "local-client-post-guard-parser-field",
+            "task_text_sha256": "45e1844d73a918c648c24c0ac095603a7422116daca6cc194289a3d31cb07dd4"
+          },
+          "contract_sha256": "109f43a3f77d4ff302b79d05b2298f5c56c2fbcf1e514e65e6c57e3af5b82d69",
+          "correlation_id": "local-correlation-post-guard-parser-field",
+          "detached_anchor_sha256": "1b6122b110afd28a7dc5beaf69394170a0362f91fb0f43a28efd683201765f2b",
+          "detached_anchor_verified": true,
+          "guard_decision": "forwarded",
+          "guard_reason": "evidence_binding_satisfied",
+          "guard_transport_writes": 1,
+          "loopback_http_requests": 1,
+          "provider_payload_sha256": "1a00dfcfc54e0c7e835313d59f1cf12037f4203971f0ff7c9f9da6f74252a142",
+          "provider_response_id": "loopback-local-client-post-guard-parser-field-post-guard-parser-field",
+          "queue_message_sha256": "4b3cbfdeb3202d4495f0a26def90f5522bd06f2728fb1e78ba44af3bab55695f",
+          "queue_rehydrated_exact_bytes": true,
+          "response_receipt_key_id": "local-response-adapter-fixture-v1",
+          "response_receipt_mac_sha256": "8f43ac31e80ae608da8795a4739233805bf672a157e8bb6bc57989e03531e4be",
+          "sdk_body_sha256": "4e5b287be72d1a2941adf3f8b48f890ea72a1edb7cf5ae4d901e1dcb4de0b4b7",
+          "serialized_response_schema": {
+            "additional_properties": false,
+            "forbidden_binding_fields": [],
+            "path": "$.response_format.json_schema.schema",
+            "present": true,
+            "properties": [
+              "clinical_assessment",
+              "differentials",
+              "primary_diagnosis"
+            ],
+            "required": [
+              "primary_diagnosis",
+              "differentials",
+              "clinical_assessment"
+            ],
+            "valid": true
+          },
+          "status_code": 200,
+          "worker_id": "fresh-worker-post-guard-parser-field-1",
+          "worker_process_boundary": true
+        }
+      ],
+      "case_id": "post-guard-parser-field",
+      "category": "post_guard_response_or_parser_drift",
+      "contract_sha256": "109f43a3f77d4ff302b79d05b2298f5c56c2fbcf1e514e65e6c57e3af5b82d69",
+      "correlation_id": "local-correlation-post-guard-parser-field",
+      "detached_anchor_sha256": "1b6122b110afd28a7dc5beaf69394170a0362f91fb0f43a28efd683201765f2b",
+      "envelope_created_after_materialization": true,
+      "guard_transport_writes": 1,
+      "loopback_http_requests": 1,
+      "outcome": "parser_rejected",
+      "parser_invocations": 1,
+      "queue_message_sha256": "4b3cbfdeb3202d4495f0a26def90f5522bd06f2728fb1e78ba44af3bab55695f",
+      "reason": "parser selects differentials, contract selects primary_diagnosis",
+      "sdk_serializations": 1,
+      "sink_writes": 0,
+      "stage": "post_guard_bound_parser",
+      "tampering": "parser_field"
+    }
+  ],
+  "model_calls": 0,
+  "network_calls": 8,
+  "scope": "This deterministic loopback audit exercises current OpenAI SDK request serialization through a guarded transport and a real local TCP/HTTP endpoint, canonical local queue envelopes, a detached HMAC-SHA256 producer anchor whose verification key is supplied to the worker outside the queue message, the exact-body GuardedTransport, semantic response-schema binding, an authenticated trusted-adapter receipt over the dispatch-body and provider-payload digests, and the bound response parser. The response pair tests two matched completions plus four whole-envelope or raw-payload swap attacks. The public fixed keys are reproducibility fixtures, not production secrets or key-management tests. The two pre-contract examples are outside the detection boundary. This audit does not establish production effectiveness, semantic association correctness before contract creation, hosted provider receipt, or model behavior.",
+  "sink_audit": {
+    "post_parser_writes": [
+      {
+        "correlation_id": "local-correlation-control-png-retry",
+        "field_name": "primary_diagnosis",
+        "value_sha256": "17648574d27f1fefba52de3b626f75fb297689b15febd0f0f5b995f74cd02eb6"
+      },
+      {
+        "correlation_id": "local-correlation-response-pair-a",
+        "field_name": "primary_diagnosis",
+        "value_sha256": "b696c748205a33115333f0d6b762901de2d53eb1c5a30ca7035bab53b5818b2d"
+      },
+      {
+        "correlation_id": "local-correlation-response-pair-b",
+        "field_name": "primary_diagnosis",
+        "value_sha256": "e2ff20f1bc902230296303f145e369ddca1012ead9050a713bf30eb5d93519ba"
+      }
+    ]
+  },
+  "structural_counts": {
+    "blocked_fixture_controls": 0,
+    "blocked_sdk_body_cases": 4,
+    "detached_anchor_rejections": 3,
+    "fixture_false_positive_count": 0,
+    "fresh_worker_processes": 15,
+    "guard_transport_writes": 12,
+    "loopback_http_requests": 8,
+    "outside_detection_boundary_cases": 2,
+    "physical_attempts": 12,
+    "post_contract_cases": 14,
+    "post_contract_sink_writes": 0,
+    "post_guard_parser_rejections": 2,
+    "queue_envelope_rejections": 5,
+    "response_association_faults": 4,
+    "response_association_rejections": 4,
+    "response_pair_matched_parses": 2,
+    "response_swap_extractions": 0,
+    "response_swap_sink_writes": 0,
+    "sdk_serializations": 12,
+    "sink_writes": 3,
+    "trusted_response_receipts": 7,
+    "valid_fixture_controls": 3
+  }
+}

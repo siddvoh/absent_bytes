@@ -1,0 +1,20 @@
+# Goose Source Snapshots
+
+This directory contains the exact OpenAI message formatter immediately before
+and after merged Goose pull request
+[`8071`](https://github.com/aaif-goose/goose/pull/8071), which closed
+[`8067`](https://github.com/aaif-goose/goose/issues/8067). The old formatter
+stored ordinary text and image content in separate arrays, then emitted only
+the image array when both were populated. Merge commit
+[`984967141376c77f424bcedf4d7ab35756753911`](https://github.com/aaif-goose/goose/commit/984967141376c77f424bcedf4d7ab35756753911)
+preserves both in message order.
+
+| File | Revision | SHA-256 | Git blob |
+|---|---|---|---|
+| `openai_before.rs` | `18bc030e48e032ebf65a7488b316cfbd966c0a16` | `7f20b9a21ba546ad3dfbddb93669d1f2b9c85fd671c814d2387f8c5ff6e7df2b` | `c696cb8e34d22415c40973b73de16da3f07ff03c` |
+| `openai_after.rs` | `984967141376c77f424bcedf4d7ab35756753911` | `2b024fecbbc99f51a2890ff19fc83e5887d09cb757edbb283817e0f2a402d9f2` | `28420888a01a7448dc68e839e774e17f50dbb23e` |
+
+The files remain under the upstream Apache-2.0 license reproduced in
+`LICENSE`. The release audit verifies the exact source branches and executes a
+source-derived mixed text-image assembly probe. It does not build the full
+Goose application or contact a model or provider.

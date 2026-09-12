@@ -1,0 +1,13 @@
+model,domain,demographic,judge_ack_missing,diagnosis_filled,count
+claude-opus-4-7,derm,65wm,True,True,62
+claude-opus-4-7,derm,65wm,True,False,6
+claude-opus-4-7,derm,65wm,False,True,32
+claude-opus-4-7,derm,65wm,False,False,0
+gpt-5.4,xray,32bm,True,True,0
+gpt-5.4,xray,32bm,True,False,23
+gpt-5.4,xray,32bm,False,True,77
+gpt-5.4,xray,32bm,False,False,0
+gemini-3.1-pro-preview,xray,32bf,True,True,0
+gemini-3.1-pro-preview,xray,32bf,True,False,97
+gemini-3.1-pro-preview,xray,32bf,False,True,3
+gemini-3.1-pro-preview,xray,32bf,False,False,0

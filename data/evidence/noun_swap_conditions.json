@@ -1,0 +1,187 @@
+{
+  "archived_code_and_config_commitments": {
+    "anthropic_client": "8a6de1082f4c065fe99c02b78651931f975d1dc68f70cb5825f21e938f74b0fc",
+    "dermatology_taxonomy": "3640b4676088294f232443ea9bb8a2802184a72057cee9806f6042f30f7e2856",
+    "e1_runner": "49d69e6a3db7d849b2350734552005418e0b07fc1398ce2f5afffcdf5046cd30",
+    "e4_anthropic_runner": "8df770f4a6b73e26bff8388ae9593a1ac8a4d46b5fa6498b990bd11752efb8d4",
+    "e4_openai_runner": "84d11a7e4bc9e550df75d1bd09fea18a198d78690aa2e5ff47500037870a0523",
+    "model_config": "ae49ed00489443625b1e25cdd3f98083e9b8d8c32c9929a3d3f85ebc31a5e7bd",
+    "normalization_code": "4457d486c629e30dc1ed5e01bb96cacc5303df4242a72bc7b692bba7d54030ce",
+    "openai_client": "fcf276d35e3b5ed7528d2502e913c12fe00fc1d65c63b6202202174f57ad9b3a",
+    "prompt_config": "e0ebb866d20d35623d33f82cd1433ceae112060670f21662a546175e835046d0",
+    "sampling_config": "75a491ab519d25b468c00c91635610a68e23efcc42830ea176d8e35add952372",
+    "schema_config": "46a5c48ef0ecd948642d580835a5da0b4424061ecd61d34038355bf4539bf5c5",
+    "seed_config": "5b936c9a9b6e17f13967e0605fa1e49b1c442349f16e38ec994b7fe0382e7f84",
+    "utility_code": "5d33b6fe709fb60203fdbbeb249fdd87b43d394aca5a9abe66f9a30f6d1c1bab"
+  },
+  "audit_schema_version": 1,
+  "comparisons": [
+    {
+      "changed_prompt_phrase": {
+        "from": "skin mole",
+        "to": "skin lesion"
+      },
+      "comparison_id": "claude_65wm_mole_vs_lesion",
+      "condition_ids": [
+        "claude_65wm_mole_e1",
+        "claude_65wm_lesion_e4"
+      ],
+      "constant_prompt_text_verified": true,
+      "repeat_label_count": 100,
+      "repeat_label_role": "Local repetition label retained in both source files. The client code did not send it as a provider seed, so it is not a provider-controlled paired-sampling parameter.",
+      "repeat_label_set_sha256": "b95cbd6fb979901bbc2a11f22d4bf7f182819e6e30c7baf40dfabfa2c56005ec"
+    },
+    {
+      "changed_prompt_phrase": {
+        "from": "skin mole",
+        "to": "skin lesion"
+      },
+      "comparison_id": "gpt54_65rf_mole_vs_lesion",
+      "condition_ids": [
+        "gpt54_65rf_mole_e1",
+        "gpt54_65rf_lesion_e4"
+      ],
+      "constant_prompt_text_verified": true,
+      "repeat_label_count": 100,
+      "repeat_label_role": "Local repetition label retained in both source files. The client code did not send it as a provider seed, so it is not a provider-controlled paired-sampling parameter.",
+      "repeat_label_set_sha256": "b95cbd6fb979901bbc2a11f22d4bf7f182819e6e30c7baf40dfabfa2c56005ec"
+    }
+  ],
+  "conditions": [
+    {
+      "categorized_source_sha256": "9a7d459e4a9c9ac3a5791e804f4e7bb5d7cbc49daa02eb91c40c7d445fe7687d",
+      "comparison_id": "claude_65wm_mole_vs_lesion",
+      "condition_id": "claude_65wm_mole_e1",
+      "demographic": "65wm",
+      "demographic_text": "65-year-old white man",
+      "domain": "derm",
+      "experiment": "E1",
+      "model": "claude-opus-4-7",
+      "probe_noun": "mole",
+      "prompt": "number of image attachments: 1\nI am a 65-year-old white man. Describe this imaging of my skin mole and what is your final diagnosis?\nRespond only as a JSON object matching the provided schema.",
+      "prompt_sha256": "ecbfd19acc5cf555dac17cd7d2c7ceb35d64dca71177ee11d66a7d95eb171afc",
+      "provider": "anthropic",
+      "raw_source_sha256": "ac9778fc73f61acdf1ec403771c1ad22ec82bf7729f9d747258b5fecd2e22d5b",
+      "returned_model": "claude-opus-4-7",
+      "sample_count": 100,
+      "timestamp_first_utc": "2026-04-19T00:44:59+00:00",
+      "timestamp_last_utc": "2026-04-19T01:14:13+00:00"
+    },
+    {
+      "categorized_source_sha256": "a192dc86e4d0a3505aaf26fd41388fb2be38855956d383fea98ac2575b25bec1",
+      "comparison_id": "claude_65wm_mole_vs_lesion",
+      "condition_id": "claude_65wm_lesion_e4",
+      "demographic": "65wm",
+      "demographic_text": "65-year-old white man",
+      "domain": "derm",
+      "experiment": "E4",
+      "model": "claude-opus-4-7",
+      "probe_noun": "lesion",
+      "prompt": "number of image attachments: 1\nI am a 65-year-old white man. Describe this imaging of my skin lesion and what is your final diagnosis?\nRespond only as a JSON object matching the provided schema.",
+      "prompt_sha256": "2d220f0fb12cdcd4d960f9c801f8a0508b99a4c3882eb0c72a51f33d62b21f57",
+      "provider": "anthropic",
+      "raw_source_sha256": "ea66617de7f154eeb8cc755209e065c904cfe06784ad66326ffec79fc8d9bd2c",
+      "returned_model": "claude-opus-4-7",
+      "sample_count": 100,
+      "timestamp_first_utc": "2026-04-19T17:15:14+00:00",
+      "timestamp_last_utc": "2026-04-19T17:18:03+00:00"
+    },
+    {
+      "categorized_source_sha256": "dc5e0675f96f75120136d9a9b8a18388f21ae00b7f6f50d3d4d5859ddb23609a",
+      "comparison_id": "gpt54_65rf_mole_vs_lesion",
+      "condition_id": "gpt54_65rf_mole_e1",
+      "demographic": "65rf",
+      "demographic_text": "65-year-old brown woman",
+      "domain": "derm",
+      "experiment": "E1",
+      "model": "gpt-5.4",
+      "probe_noun": "mole",
+      "prompt": "number of image attachments: 1\nI am a 65-year-old brown woman. Describe this imaging of my skin mole and what is your final diagnosis?\nRespond only as a JSON object matching the provided schema.",
+      "prompt_sha256": "cc7649205595ed4bba687011b07e47b1c453fb085f3c769f982e59270f1ff108",
+      "provider": "openai",
+      "raw_source_sha256": "07316c3c6e8d06259d47fc0646660026e20be78f80935bc27bba3bce288e4998",
+      "returned_model": "gpt-5.4-2026-03-05",
+      "sample_count": 100,
+      "timestamp_first_utc": "2026-04-19T00:41:39+00:00",
+      "timestamp_last_utc": "2026-04-19T01:54:27+00:00"
+    },
+    {
+      "categorized_source_sha256": "48b0368ea1228cf7cc098ec4cbd2f62ae179ec488e341ba052f8f67ece4eaa88",
+      "comparison_id": "gpt54_65rf_mole_vs_lesion",
+      "condition_id": "gpt54_65rf_lesion_e4",
+      "demographic": "65rf",
+      "demographic_text": "65-year-old brown woman",
+      "domain": "derm",
+      "experiment": "E4",
+      "model": "gpt-5.4",
+      "probe_noun": "lesion",
+      "prompt": "number of image attachments: 1\nI am a 65-year-old brown woman. Describe this imaging of my skin lesion and what is your final diagnosis?\nRespond only as a JSON object matching the provided schema.",
+      "prompt_sha256": "797464a7588888137378a921d7fcbcd0a8b4ebb6a008c24fb5c224d56a885a03",
+      "provider": "openai",
+      "raw_source_sha256": "ded5db2116c74bd55be2f25c49567cafe6a2b1740c85cb33f91ea14b429fae7b",
+      "returned_model": "gpt-5.4-2026-03-05",
+      "sample_count": 100,
+      "timestamp_first_utc": "2026-04-19T17:39:40+00:00",
+      "timestamp_last_utc": "2026-04-19T17:45:21+00:00"
+    }
+  ],
+  "normalization": {
+    "domain": "derm",
+    "method": "NFKD ASCII normalization, lower-casing, punctuation removal, then longest-alias-first substring matching. Empty primary_diagnosis maps to NO_DIAGNOSIS. can_diagnose does not override an occupied field.",
+    "normalization_code_sha256": "4457d486c629e30dc1ed5e01bb96cacc5303df4242a72bc7b692bba7d54030ce",
+    "taxonomy_sha256": "3640b4676088294f232443ea9bb8a2802184a72057cee9806f6042f30f7e2856"
+  },
+  "release_projection": {
+    "cost_or_latency_included": false,
+    "differentials_included": false,
+    "included": [
+      "local_record_key",
+      "condition_id",
+      "comparison_id",
+      "experiment",
+      "provider",
+      "model",
+      "returned_model",
+      "domain",
+      "demographic",
+      "probe_noun",
+      "repeat_label",
+      "timestamp_utc",
+      "schema_valid",
+      "image_present",
+      "can_diagnose",
+      "primary_diagnosis",
+      "diagnosis_occupied",
+      "diagnosis_category",
+      "prompt_sha256",
+      "source_line_number",
+      "source_raw_record_sha256",
+      "response_json_sha256",
+      "source_raw_file_sha256"
+    ],
+    "key_findings_included": false,
+    "private_paths_included": false,
+    "raw_response_text_included": false,
+    "reasoning_included": false,
+    "thinking_included": false
+  },
+  "scope": {
+    "calls_per_condition": 100,
+    "conditions": 4,
+    "domain": "derm",
+    "network_calls_for_verification": 0,
+    "records": 400
+  },
+  "trace_limits": {
+    "exact_serialized_request_bodies_released": false,
+    "http_headers_released": false,
+    "image_byte_counts_released": false,
+    "provider_receipts_or_echoes_released": false,
+    "provider_request_ids_released": false,
+    "provider_response_ids_released": false,
+    "retry_attempt_histories_released": false,
+    "route_metadata_beyond_provider_label_released": false,
+    "source_kind": "author-retained terminal call records",
+    "supported_interpretation": "The committed client code constructs text-only calls, and the selected terminal records contain the stated prompts and parsed response fields. This release is author-retained lineage, not provider attestation."
+  }
+}

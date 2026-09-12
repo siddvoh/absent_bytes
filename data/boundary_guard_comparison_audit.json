@@ -1,0 +1,759 @@
+{
+  "audit_schema_version": 1,
+  "caveats": [
+    "The eight pathway traces share one repeated final body shape and have no matched controls in this audit.",
+    "The source cases are exact released pre/post projections. They are not full application executions or an incident-frequency sample.",
+    "Simple presence checks only for an inline image part. Decoded presence additionally validates bytes and MIME. Body-local consistency trusts the task marker inside the body. Caller-owned binding compares the body with external caller state."
+  ],
+  "execution": {
+    "credentials_required": false,
+    "network_calls": 0,
+    "provider_or_model_calls": 0
+  },
+  "guard_definitions": {
+    "body_local_consistency": "Select expected state from the task marker inside the body, then compare count, order, MIME, and digest.",
+    "caller_owned_binding": "Compare the active turn with caller-owned task, evidence, and field state.",
+    "decoded_presence": "Require at least one inline image and validate decoding plus declared and decoded MIME agreement.",
+    "simple_presence": "Require at least one inline image part without decoding or task binding."
+  },
+  "loss_paths": {
+    "cases": [
+      {
+        "body_sha256": "e461a36a5c8d732b49377bc4168aa8d1bb39382337860463e4dc0728e548914e",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_task_missing"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "task_id_mismatch"
+          },
+          "decoded_presence": {
+            "decision": "blocked",
+            "reason": "no_materialized_image"
+          },
+          "simple_presence": {
+            "decision": "blocked",
+            "reason": "no_inline_image"
+          }
+        },
+        "scenario": "partial_upload_failure"
+      },
+      {
+        "body_sha256": "e461a36a5c8d732b49377bc4168aa8d1bb39382337860463e4dc0728e548914e",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_task_missing"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "task_id_mismatch"
+          },
+          "decoded_presence": {
+            "decision": "blocked",
+            "reason": "no_materialized_image"
+          },
+          "simple_presence": {
+            "decision": "blocked",
+            "reason": "no_inline_image"
+          }
+        },
+        "scenario": "retry_reconstruction_loses_binary"
+      },
+      {
+        "body_sha256": "e461a36a5c8d732b49377bc4168aa8d1bb39382337860463e4dc0728e548914e",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_task_missing"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "task_id_mismatch"
+          },
+          "decoded_presence": {
+            "decision": "blocked",
+            "reason": "no_materialized_image"
+          },
+          "simple_presence": {
+            "decision": "blocked",
+            "reason": "no_inline_image"
+          }
+        },
+        "scenario": "adapter_drops_binary"
+      },
+      {
+        "body_sha256": "e461a36a5c8d732b49377bc4168aa8d1bb39382337860463e4dc0728e548914e",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_task_missing"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "task_id_mismatch"
+          },
+          "decoded_presence": {
+            "decision": "blocked",
+            "reason": "no_materialized_image"
+          },
+          "simple_presence": {
+            "decision": "blocked",
+            "reason": "no_inline_image"
+          }
+        },
+        "scenario": "agent_handoff_text_only"
+      },
+      {
+        "body_sha256": "e461a36a5c8d732b49377bc4168aa8d1bb39382337860463e4dc0728e548914e",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_task_missing"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "task_id_mismatch"
+          },
+          "decoded_presence": {
+            "decision": "blocked",
+            "reason": "no_materialized_image"
+          },
+          "simple_presence": {
+            "decision": "blocked",
+            "reason": "no_inline_image"
+          }
+        },
+        "scenario": "stale_ui_attachment_count"
+      },
+      {
+        "body_sha256": "e461a36a5c8d732b49377bc4168aa8d1bb39382337860463e4dc0728e548914e",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_task_missing"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "task_id_mismatch"
+          },
+          "decoded_presence": {
+            "decision": "blocked",
+            "reason": "no_materialized_image"
+          },
+          "simple_presence": {
+            "decision": "blocked",
+            "reason": "no_inline_image"
+          }
+        },
+        "scenario": "queue_blob_loss"
+      },
+      {
+        "body_sha256": "e461a36a5c8d732b49377bc4168aa8d1bb39382337860463e4dc0728e548914e",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_task_missing"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "task_id_mismatch"
+          },
+          "decoded_presence": {
+            "decision": "blocked",
+            "reason": "no_materialized_image"
+          },
+          "simple_presence": {
+            "decision": "blocked",
+            "reason": "no_inline_image"
+          }
+        },
+        "scenario": "signed_url_expired"
+      },
+      {
+        "body_sha256": "e461a36a5c8d732b49377bc4168aa8d1bb39382337860463e4dc0728e548914e",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_task_missing"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "task_id_mismatch"
+          },
+          "decoded_presence": {
+            "decision": "blocked",
+            "reason": "no_materialized_image"
+          },
+          "simple_presence": {
+            "decision": "blocked",
+            "reason": "no_inline_image"
+          }
+        },
+        "scenario": "sdk_text_only_retry"
+      }
+    ],
+    "scope": {
+      "controls": 0,
+      "faults": 8,
+      "frozen_body_hashes": 1,
+      "note": "These are eight pathway traces over one repeated final text-only body shape. They test fault blocking only and do not estimate false blocks."
+    },
+    "totals": {
+      "body_local_consistency": {
+        "faults_blocked": 8,
+        "faults_forwarded": 0
+      },
+      "caller_owned_binding": {
+        "faults_blocked": 8,
+        "faults_forwarded": 0
+      },
+      "decoded_presence": {
+        "faults_blocked": 8,
+        "faults_forwarded": 0
+      },
+      "simple_presence": {
+        "faults_blocked": 8,
+        "faults_forwarded": 0
+      }
+    }
+  },
+  "source_regressions": {
+    "cases": [
+      {
+        "audit_case_id": "google-adk/after/google-adk-jpeg",
+        "body_sha256": "1baa149493e1bbfdcc67e44d112e64b6a8591f00dc065d1e9ad7f08426bd1e97",
+        "case_id": "google-adk-jpeg",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "forwarded",
+            "reason": "body_self_consistency_satisfied"
+          },
+          "caller_owned_binding": {
+            "decision": "forwarded",
+            "reason": "caller_owned_binding_satisfied"
+          },
+          "decoded_presence": {
+            "decision": "forwarded",
+            "reason": "decoded_presence_satisfied"
+          },
+          "simple_presence": {
+            "decision": "forwarded",
+            "reason": "inline_image_present"
+          }
+        },
+        "project": "google_adk",
+        "stage": "post_fix"
+      },
+      {
+        "audit_case_id": "google-adk/before/google-adk-jpeg",
+        "body_sha256": "44435b8cbed7e7bf9ab37f5273c6944af7c24ddfb16e83271e13a9c6799c5b71",
+        "case_id": "google-adk-jpeg",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_task_missing"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "task_id_mismatch"
+          },
+          "decoded_presence": {
+            "decision": "blocked",
+            "reason": "no_materialized_image"
+          },
+          "simple_presence": {
+            "decision": "blocked",
+            "reason": "no_inline_image"
+          }
+        },
+        "project": "google_adk",
+        "stage": "pre_fix"
+      },
+      {
+        "audit_case_id": "google-adk/after/google-adk-png",
+        "body_sha256": "4c4418e3e99028312daf1f6c8128a3bc2b392197b988ef74ad94136d643ddcd2",
+        "case_id": "google-adk-png",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "forwarded",
+            "reason": "body_self_consistency_satisfied"
+          },
+          "caller_owned_binding": {
+            "decision": "forwarded",
+            "reason": "caller_owned_binding_satisfied"
+          },
+          "decoded_presence": {
+            "decision": "forwarded",
+            "reason": "decoded_presence_satisfied"
+          },
+          "simple_presence": {
+            "decision": "forwarded",
+            "reason": "inline_image_present"
+          }
+        },
+        "project": "google_adk",
+        "stage": "post_fix"
+      },
+      {
+        "audit_case_id": "google-adk/before/google-adk-png",
+        "body_sha256": "44435b8cbed7e7bf9ab37f5273c6944af7c24ddfb16e83271e13a9c6799c5b71",
+        "case_id": "google-adk-png",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_task_missing"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "task_id_mismatch"
+          },
+          "decoded_presence": {
+            "decision": "blocked",
+            "reason": "no_materialized_image"
+          },
+          "simple_presence": {
+            "decision": "blocked",
+            "reason": "no_inline_image"
+          }
+        },
+        "project": "google_adk",
+        "stage": "pre_fix"
+      },
+      {
+        "audit_case_id": "goose/after/goose-jpeg-image-text",
+        "body_sha256": "6204fbf016fa1e487c9c596183312540ade18d1f0c44add5741ce413a6b6d0ee",
+        "case_id": "goose-jpeg-image-text",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "forwarded",
+            "reason": "body_self_consistency_satisfied"
+          },
+          "caller_owned_binding": {
+            "decision": "forwarded",
+            "reason": "caller_owned_binding_satisfied"
+          },
+          "decoded_presence": {
+            "decision": "forwarded",
+            "reason": "decoded_presence_satisfied"
+          },
+          "simple_presence": {
+            "decision": "forwarded",
+            "reason": "inline_image_present"
+          }
+        },
+        "project": "goose",
+        "stage": "post_fix"
+      },
+      {
+        "audit_case_id": "goose/before/goose-jpeg-image-text",
+        "body_sha256": "932463c1d955bb3ff0534fddd3a19eb3ad65bdfb694f00ba444c7ba9c12f7120",
+        "case_id": "goose-jpeg-image-text",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_task_missing"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "task_id_mismatch"
+          },
+          "decoded_presence": {
+            "decision": "forwarded",
+            "reason": "decoded_presence_satisfied"
+          },
+          "simple_presence": {
+            "decision": "forwarded",
+            "reason": "inline_image_present"
+          }
+        },
+        "project": "goose",
+        "stage": "pre_fix"
+      },
+      {
+        "audit_case_id": "goose/after/goose-jpeg-text-image",
+        "body_sha256": "d5e929db48ccb05b5886839aecef3986752d7bd36abaac0574175fa994bee3ea",
+        "case_id": "goose-jpeg-text-image",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "forwarded",
+            "reason": "body_self_consistency_satisfied"
+          },
+          "caller_owned_binding": {
+            "decision": "forwarded",
+            "reason": "caller_owned_binding_satisfied"
+          },
+          "decoded_presence": {
+            "decision": "forwarded",
+            "reason": "decoded_presence_satisfied"
+          },
+          "simple_presence": {
+            "decision": "forwarded",
+            "reason": "inline_image_present"
+          }
+        },
+        "project": "goose",
+        "stage": "post_fix"
+      },
+      {
+        "audit_case_id": "goose/before/goose-jpeg-text-image",
+        "body_sha256": "932463c1d955bb3ff0534fddd3a19eb3ad65bdfb694f00ba444c7ba9c12f7120",
+        "case_id": "goose-jpeg-text-image",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_task_missing"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "task_id_mismatch"
+          },
+          "decoded_presence": {
+            "decision": "forwarded",
+            "reason": "decoded_presence_satisfied"
+          },
+          "simple_presence": {
+            "decision": "forwarded",
+            "reason": "inline_image_present"
+          }
+        },
+        "project": "goose",
+        "stage": "pre_fix"
+      },
+      {
+        "audit_case_id": "goose/after/goose-png-image-text",
+        "body_sha256": "47c29069175ba00a7ca5911d53c608eef663fa021fc60d28bc18483a9a04f4c0",
+        "case_id": "goose-png-image-text",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "forwarded",
+            "reason": "body_self_consistency_satisfied"
+          },
+          "caller_owned_binding": {
+            "decision": "forwarded",
+            "reason": "caller_owned_binding_satisfied"
+          },
+          "decoded_presence": {
+            "decision": "forwarded",
+            "reason": "decoded_presence_satisfied"
+          },
+          "simple_presence": {
+            "decision": "forwarded",
+            "reason": "inline_image_present"
+          }
+        },
+        "project": "goose",
+        "stage": "post_fix"
+      },
+      {
+        "audit_case_id": "goose/before/goose-png-image-text",
+        "body_sha256": "7e5e08043217723204c83b687e9dcc7bed68b39cb2ddc074a86658654ed02969",
+        "case_id": "goose-png-image-text",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_task_missing"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "task_id_mismatch"
+          },
+          "decoded_presence": {
+            "decision": "forwarded",
+            "reason": "decoded_presence_satisfied"
+          },
+          "simple_presence": {
+            "decision": "forwarded",
+            "reason": "inline_image_present"
+          }
+        },
+        "project": "goose",
+        "stage": "pre_fix"
+      },
+      {
+        "audit_case_id": "goose/after/goose-png-text-image",
+        "body_sha256": "628d8895eba104c3b878847d2708e60ba5722b5b05084d727ce68311be648e10",
+        "case_id": "goose-png-text-image",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "forwarded",
+            "reason": "body_self_consistency_satisfied"
+          },
+          "caller_owned_binding": {
+            "decision": "forwarded",
+            "reason": "caller_owned_binding_satisfied"
+          },
+          "decoded_presence": {
+            "decision": "forwarded",
+            "reason": "decoded_presence_satisfied"
+          },
+          "simple_presence": {
+            "decision": "forwarded",
+            "reason": "inline_image_present"
+          }
+        },
+        "project": "goose",
+        "stage": "post_fix"
+      },
+      {
+        "audit_case_id": "goose/before/goose-png-text-image",
+        "body_sha256": "7e5e08043217723204c83b687e9dcc7bed68b39cb2ddc074a86658654ed02969",
+        "case_id": "goose-png-text-image",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_task_missing"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "task_id_mismatch"
+          },
+          "decoded_presence": {
+            "decision": "forwarded",
+            "reason": "decoded_presence_satisfied"
+          },
+          "simple_presence": {
+            "decision": "forwarded",
+            "reason": "inline_image_present"
+          }
+        },
+        "project": "goose",
+        "stage": "pre_fix"
+      },
+      {
+        "audit_case_id": "open-webui-jpeg-v0.8.3",
+        "body_sha256": "8375bc9f567c2498bbe2a5416452379da687e9b7cec94ca4d55d72a847bccd83",
+        "case_id": "open-webui-jpeg",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "forwarded",
+            "reason": "body_self_consistency_satisfied"
+          },
+          "caller_owned_binding": {
+            "decision": "forwarded",
+            "reason": "caller_owned_binding_satisfied"
+          },
+          "decoded_presence": {
+            "decision": "forwarded",
+            "reason": "decoded_presence_satisfied"
+          },
+          "simple_presence": {
+            "decision": "forwarded",
+            "reason": "inline_image_present"
+          }
+        },
+        "project": "open_webui",
+        "stage": "post_fix"
+      },
+      {
+        "audit_case_id": "open-webui-jpeg-v0.8.2",
+        "body_sha256": "91f0fda4ac988e27f21127854504af2c4912ed6302b55e0782ab223694c1b1dd",
+        "case_id": "open-webui-jpeg",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_image_count_mismatch"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "missing_image"
+          },
+          "decoded_presence": {
+            "decision": "blocked",
+            "reason": "no_materialized_image"
+          },
+          "simple_presence": {
+            "decision": "blocked",
+            "reason": "no_inline_image"
+          }
+        },
+        "project": "open_webui",
+        "stage": "pre_fix"
+      },
+      {
+        "audit_case_id": "open-webui-png-v0.8.3",
+        "body_sha256": "54d22e8bf0bf305efea3b117ed72e346b4cc3db632da9df88dde0edc3d3b62fa",
+        "case_id": "open-webui-png",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "forwarded",
+            "reason": "body_self_consistency_satisfied"
+          },
+          "caller_owned_binding": {
+            "decision": "forwarded",
+            "reason": "caller_owned_binding_satisfied"
+          },
+          "decoded_presence": {
+            "decision": "forwarded",
+            "reason": "decoded_presence_satisfied"
+          },
+          "simple_presence": {
+            "decision": "forwarded",
+            "reason": "inline_image_present"
+          }
+        },
+        "project": "open_webui",
+        "stage": "post_fix"
+      },
+      {
+        "audit_case_id": "open-webui-png-v0.8.2",
+        "body_sha256": "e7ff2acc3833ce6f596fa6792c97c2c7b66f9723859118d913020e83ca1d8208",
+        "case_id": "open-webui-png",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_image_count_mismatch"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "missing_image"
+          },
+          "decoded_presence": {
+            "decision": "blocked",
+            "reason": "no_materialized_image"
+          },
+          "simple_presence": {
+            "decision": "blocked",
+            "reason": "no_inline_image"
+          }
+        },
+        "project": "open_webui",
+        "stage": "pre_fix"
+      },
+      {
+        "audit_case_id": "openclaw-jpeg",
+        "body_sha256": "d8ddb1f201310bf2e42e1801c0459c2dcabb5e82db9f41549d341cdebd95acba",
+        "case_id": "openclaw-jpeg",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "forwarded",
+            "reason": "body_self_consistency_satisfied"
+          },
+          "caller_owned_binding": {
+            "decision": "forwarded",
+            "reason": "caller_owned_binding_satisfied"
+          },
+          "decoded_presence": {
+            "decision": "forwarded",
+            "reason": "decoded_presence_satisfied"
+          },
+          "simple_presence": {
+            "decision": "forwarded",
+            "reason": "inline_image_present"
+          }
+        },
+        "project": "openclaw",
+        "stage": "post_fix"
+      },
+      {
+        "audit_case_id": "openclaw-jpeg",
+        "body_sha256": "ebef9d7fe15db00e13d55cf265df66585c9f871c3cb30a4a9a382082d557b6c0",
+        "case_id": "openclaw-jpeg",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_image_count_mismatch"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "missing_image"
+          },
+          "decoded_presence": {
+            "decision": "blocked",
+            "reason": "no_materialized_image"
+          },
+          "simple_presence": {
+            "decision": "blocked",
+            "reason": "no_inline_image"
+          }
+        },
+        "project": "openclaw",
+        "stage": "pre_fix"
+      },
+      {
+        "audit_case_id": "openclaw-png",
+        "body_sha256": "014df4d30fc9a107bbba5e4a3ca78baab4efba1a0472151fee1f9be1bf5b08fe",
+        "case_id": "openclaw-png",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "forwarded",
+            "reason": "body_self_consistency_satisfied"
+          },
+          "caller_owned_binding": {
+            "decision": "forwarded",
+            "reason": "caller_owned_binding_satisfied"
+          },
+          "decoded_presence": {
+            "decision": "forwarded",
+            "reason": "decoded_presence_satisfied"
+          },
+          "simple_presence": {
+            "decision": "forwarded",
+            "reason": "inline_image_present"
+          }
+        },
+        "project": "openclaw",
+        "stage": "post_fix"
+      },
+      {
+        "audit_case_id": "openclaw-png",
+        "body_sha256": "4407f949d6195dd39980ec1cbcb8cdb11a539d1974a912a33c53459eedfc67ab",
+        "case_id": "openclaw-png",
+        "decisions": {
+          "body_local_consistency": {
+            "decision": "blocked",
+            "reason": "body_image_count_mismatch"
+          },
+          "caller_owned_binding": {
+            "decision": "blocked",
+            "reason": "missing_image"
+          },
+          "decoded_presence": {
+            "decision": "blocked",
+            "reason": "no_materialized_image"
+          },
+          "simple_presence": {
+            "decision": "blocked",
+            "reason": "no_inline_image"
+          }
+        },
+        "project": "openclaw",
+        "stage": "pre_fix"
+      }
+    ],
+    "scope": {
+      "independent_projects": 4,
+      "post_fix_controls": 10,
+      "pre_fix_faults": 10,
+      "source_audit_sha256": "32f31daa971f3a1c945d830eb83d2ced4abee012af2dd38600527ede44c6d76b"
+    },
+    "totals": {
+      "body_local_consistency": {
+        "post_fix_blocked": 0,
+        "post_fix_forwarded": 10,
+        "pre_fix_blocked": 10,
+        "pre_fix_forwarded": 0
+      },
+      "caller_owned_binding": {
+        "post_fix_blocked": 0,
+        "post_fix_forwarded": 10,
+        "pre_fix_blocked": 10,
+        "pre_fix_forwarded": 0
+      },
+      "decoded_presence": {
+        "post_fix_blocked": 0,
+        "post_fix_forwarded": 10,
+        "pre_fix_blocked": 6,
+        "pre_fix_forwarded": 4
+      },
+      "simple_presence": {
+        "post_fix_blocked": 0,
+        "post_fix_forwarded": 10,
+        "pre_fix_blocked": 6,
+        "pre_fix_forwarded": 4
+      }
+    }
+  }
+}

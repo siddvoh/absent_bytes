@@ -1,0 +1,97 @@
+{
+  "audit_schema_version": 1,
+  "cases": [
+    {
+      "case_id": "open-webui-png",
+      "image_sha256": "b1ff9c8ea3a780bad09b346c423d2d0e46815926879b18e841d928376a946640",
+      "mime_type": "image/png",
+      "v0.8.2": {
+        "body_sha256": "e7ff2acc3833ce6f596fa6792c97c2c7b66f9723859118d913020e83ca1d8208",
+        "contract_decision": "blocked",
+        "contract_reason": "missing_image",
+        "guarded_dispatch_invocations": 0,
+        "image_parts_in_emitted_body": 0,
+        "loaded_file_count": 0,
+        "unguarded_dispatch_invocations": 1
+      },
+      "v0.8.3": {
+        "body_sha256": "54d22e8bf0bf305efea3b117ed72e346b4cc3db632da9df88dde0edc3d3b62fa",
+        "contract_decision": "forwarded",
+        "contract_reason": "caller_owned_binding_satisfied",
+        "guarded_dispatch_invocations": 1,
+        "image_parts_in_emitted_body": 1,
+        "loaded_file_count": 1,
+        "unguarded_dispatch_invocations": 1
+      }
+    },
+    {
+      "case_id": "open-webui-jpeg",
+      "image_sha256": "60d308cb68f57094846ece1d554759daa1b448879ce78db87f5801220b91d61c",
+      "mime_type": "image/jpeg",
+      "v0.8.2": {
+        "body_sha256": "91f0fda4ac988e27f21127854504af2c4912ed6302b55e0782ab223694c1b1dd",
+        "contract_decision": "blocked",
+        "contract_reason": "missing_image",
+        "guarded_dispatch_invocations": 0,
+        "image_parts_in_emitted_body": 0,
+        "loaded_file_count": 0,
+        "unguarded_dispatch_invocations": 1
+      },
+      "v0.8.3": {
+        "body_sha256": "8375bc9f567c2498bbe2a5416452379da687e9b7cec94ca4d55d72a847bccd83",
+        "contract_decision": "forwarded",
+        "contract_reason": "caller_owned_binding_satisfied",
+        "guarded_dispatch_invocations": 1,
+        "image_parts_in_emitted_body": 1,
+        "loaded_file_count": 1,
+        "unguarded_dispatch_invocations": 1
+      }
+    }
+  ],
+  "caveats": [
+    "This is a source-level execution of the pinned attachment-serialization path, not a full Open WebUI server deployment.",
+    "The fixtures use synthetic one-pixel PNG and JPEG images and make no model or provider call.",
+    "The result reproduces one reported client boundary and does not estimate incident frequency, production effectiveness, or clinical safety."
+  ],
+  "execution": {
+    "credentials_required": false,
+    "exact_upstream_ast_executed": true,
+    "full_server_started": false,
+    "network_calls": 0,
+    "provider_or_model_calls": 0
+  },
+  "source": {
+    "fix_commit": "f1053d94c7ef7b8b78682dd73586b65a84d202a1",
+    "fix_commit_parent": "10cfddccd7ae017c7e268820b755e4033e88943a",
+    "fix_commit_url": "https://github.com/open-webui/open-webui/commit/f1053d94c7ef7b8b78682dd73586b65a84d202a1",
+    "issue_url": "https://github.com/open-webui/open-webui/issues/21477",
+    "project": "open-webui/open-webui",
+    "source_files": {
+      "v0.8.2": {
+        "commit": "7c7fe443289c3d0307ebbcf320fb1d895c3ee79b",
+        "file": "third_party/open_webui/middleware_v0_8_2.py",
+        "git_blob_sha1": "7ab7537de2cae7d0c1806ab7b4665d530010ce3d",
+        "sha256": "1ffbbfee1b1975cf7cd868899580e11dc39ffc303ee1e229c7f4260786a4256a"
+      },
+      "v0.8.3": {
+        "commit": "b8112d72b95e480f946f0688bed29321b61e65af",
+        "file": "third_party/open_webui/middleware_v0_8_3.py",
+        "git_blob_sha1": "ec7af7733bad4ddb558f57c20edac06cf879943e",
+        "sha256": "07fad22b951d912c0b436a098a8def0317810e8283a8f88d0f4eb73f9833b5ed"
+      }
+    },
+    "upstream_diff": {
+      "deletions": 1,
+      "insertions": 26
+    },
+    "v0.8.3_injection_ast_sha256": "cb591c69a84413f68c275dfd09504fcc007cd0f057389c68d1cb507988c8dc42"
+  },
+  "totals": {
+    "fixed_contract_forwarded": 2,
+    "fixed_image_parts": 2,
+    "fixtures": 2,
+    "old_contract_blocked": 2,
+    "old_guarded_dispatches": 0,
+    "old_image_parts": 0
+  }
+}

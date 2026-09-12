@@ -1,0 +1,15 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.2pt}
+\caption{\textbf{Post-freeze OpenClaw holdout.} The exact upstream gateway test fails at the parent because \texttt{agentCommand.images} is absent and passes at the fix. The frozen guard is evaluated through a thin command-input adapter on local PNG and JPEG fixtures.}
+\label{tab:openclaw-holdout}
+\begin{tabular}{@{}p{.22\linewidth}p{.22\linewidth}p{.23\linewidth}p{.23\linewidth}@{}}
+\toprule
+Revision & Upstream gateway test & Agent images & Frozen guard \\
+\midrule
+Parent + test patch & 3/4 pass; image test fails & 0/2 & 2/2 blocked \\
+Fix commit & 4/4 pass & 2/2 & 2/2 forwarded \\
+\bottomrule
+\end{tabular}
+\end{table}

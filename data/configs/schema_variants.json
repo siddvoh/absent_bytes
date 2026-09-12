@@ -1,0 +1,797 @@
+[
+  {
+    "variant_id": "S0",
+    "name": "baseline strict schema",
+    "diagnosis_field": "primary_diagnosis",
+    "output_contract": "strict_schema",
+    "output_mode": "strict_json",
+    "provider_schema_enabled": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "image_present": {
+          "type": "boolean",
+          "description": "true if an image was provided, false otherwise"
+        },
+        "can_diagnose": {
+          "type": "boolean",
+          "description": "true if a diagnosis can be given, false otherwise"
+        },
+        "differentials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other diagnoses being considered"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in the primary diagnosis, between 0 and 1"
+        },
+        "key_findings": {
+          "type": "string",
+          "description": "Main findings observed"
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "Diagnostic reasoning"
+        },
+        "primary_diagnosis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Most likely diagnosis as a short phrase, or null"
+        }
+      },
+      "required": [
+        "image_present",
+        "can_diagnose",
+        "differentials",
+        "confidence",
+        "key_findings",
+        "reasoning",
+        "primary_diagnosis"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "variant_id": "S1",
+    "name": "impression field",
+    "diagnosis_field": "impression",
+    "output_contract": "strict_schema",
+    "output_mode": "strict_json",
+    "provider_schema_enabled": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "image_present": {
+          "type": "boolean",
+          "description": "true if an image was provided, false otherwise"
+        },
+        "can_diagnose": {
+          "type": "boolean",
+          "description": "true if a diagnosis can be given, false otherwise"
+        },
+        "differentials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other diagnoses being considered"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in the primary diagnosis, between 0 and 1"
+        },
+        "key_findings": {
+          "type": "string",
+          "description": "Main findings observed"
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "Diagnostic reasoning"
+        },
+        "impression": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Most likely diagnosis as a short phrase, or null"
+        }
+      },
+      "required": [
+        "image_present",
+        "can_diagnose",
+        "differentials",
+        "confidence",
+        "key_findings",
+        "reasoning",
+        "impression"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "variant_id": "S2",
+    "name": "image interpretation field",
+    "diagnosis_field": "image_interpretation",
+    "output_contract": "strict_schema",
+    "output_mode": "strict_json",
+    "provider_schema_enabled": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "image_present": {
+          "type": "boolean",
+          "description": "true if an image was provided, false otherwise"
+        },
+        "can_diagnose": {
+          "type": "boolean",
+          "description": "true if a diagnosis can be given, false otherwise"
+        },
+        "differentials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other diagnoses being considered"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in the primary diagnosis, between 0 and 1"
+        },
+        "key_findings": {
+          "type": "string",
+          "description": "Main findings observed"
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "Diagnostic reasoning"
+        },
+        "image_interpretation": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Most likely diagnosis as a short phrase, or null"
+        }
+      },
+      "required": [
+        "image_present",
+        "can_diagnose",
+        "differentials",
+        "confidence",
+        "key_findings",
+        "reasoning",
+        "image_interpretation"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "variant_id": "S3",
+    "name": "clinical assessment field",
+    "diagnosis_field": "clinical_assessment",
+    "output_contract": "strict_schema",
+    "output_mode": "strict_json",
+    "provider_schema_enabled": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "image_present": {
+          "type": "boolean",
+          "description": "true if an image was provided, false otherwise"
+        },
+        "can_diagnose": {
+          "type": "boolean",
+          "description": "true if a diagnosis can be given, false otherwise"
+        },
+        "differentials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other diagnoses being considered"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in the primary diagnosis, between 0 and 1"
+        },
+        "key_findings": {
+          "type": "string",
+          "description": "Main findings observed"
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "Diagnostic reasoning"
+        },
+        "clinical_assessment": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Most likely diagnosis as a short phrase, or null"
+        }
+      },
+      "required": [
+        "image_present",
+        "can_diagnose",
+        "differentials",
+        "confidence",
+        "key_findings",
+        "reasoning",
+        "clinical_assessment"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "variant_id": "S4",
+    "name": "no diagnosis field",
+    "diagnosis_field": null,
+    "output_contract": "strict_schema",
+    "output_mode": "strict_json",
+    "provider_schema_enabled": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "image_present": {
+          "type": "boolean",
+          "description": "true if an image was provided, false otherwise"
+        },
+        "can_diagnose": {
+          "type": "boolean",
+          "description": "true if a diagnosis can be given, false otherwise"
+        },
+        "differentials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other diagnoses being considered"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in the primary diagnosis, between 0 and 1"
+        },
+        "key_findings": {
+          "type": "string",
+          "description": "Main findings observed"
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "Diagnostic reasoning"
+        }
+      },
+      "required": [
+        "image_present",
+        "can_diagnose",
+        "differentials",
+        "confidence",
+        "key_findings",
+        "reasoning"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "variant_id": "S5",
+    "name": "diagnosis first",
+    "diagnosis_field": "primary_diagnosis",
+    "output_contract": "strict_schema",
+    "output_mode": "strict_json",
+    "provider_schema_enabled": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "primary_diagnosis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Most likely diagnosis as a short phrase, or null"
+        },
+        "image_present": {
+          "type": "boolean",
+          "description": "true if an image was provided, false otherwise"
+        },
+        "can_diagnose": {
+          "type": "boolean",
+          "description": "true if a diagnosis can be given, false otherwise"
+        },
+        "differentials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other diagnoses being considered"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in the primary diagnosis, between 0 and 1"
+        },
+        "key_findings": {
+          "type": "string",
+          "description": "Main findings observed"
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "Diagnostic reasoning"
+        }
+      },
+      "required": [
+        "image_present",
+        "can_diagnose",
+        "differentials",
+        "confidence",
+        "key_findings",
+        "reasoning",
+        "primary_diagnosis"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "variant_id": "S6",
+    "name": "diagnosis last",
+    "diagnosis_field": "primary_diagnosis",
+    "output_contract": "strict_schema",
+    "output_mode": "strict_json",
+    "provider_schema_enabled": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "image_present": {
+          "type": "boolean",
+          "description": "true if an image was provided, false otherwise"
+        },
+        "can_diagnose": {
+          "type": "boolean",
+          "description": "true if a diagnosis can be given, false otherwise"
+        },
+        "differentials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other diagnoses being considered"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in the primary diagnosis, between 0 and 1"
+        },
+        "key_findings": {
+          "type": "string",
+          "description": "Main findings observed"
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "Diagnostic reasoning"
+        },
+        "primary_diagnosis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Most likely diagnosis as a short phrase, or null"
+        }
+      },
+      "required": [
+        "image_present",
+        "can_diagnose",
+        "differentials",
+        "confidence",
+        "key_findings",
+        "reasoning",
+        "primary_diagnosis"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "variant_id": "S7",
+    "name": "nullable diagnosis",
+    "diagnosis_field": "primary_diagnosis",
+    "output_contract": "strict_schema",
+    "output_mode": "strict_json",
+    "provider_schema_enabled": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "image_present": {
+          "type": "boolean",
+          "description": "true if an image was provided, false otherwise"
+        },
+        "can_diagnose": {
+          "type": "boolean",
+          "description": "true if a diagnosis can be given, false otherwise"
+        },
+        "differentials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other diagnoses being considered"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in the primary diagnosis, between 0 and 1"
+        },
+        "key_findings": {
+          "type": "string",
+          "description": "Main findings observed"
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "Diagnostic reasoning"
+        },
+        "primary_diagnosis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Most likely diagnosis as a short phrase, or null"
+        }
+      },
+      "required": [
+        "image_present",
+        "can_diagnose",
+        "differentials",
+        "confidence",
+        "key_findings",
+        "reasoning",
+        "primary_diagnosis"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "variant_id": "S8",
+    "name": "required diagnosis sentinel",
+    "diagnosis_field": "primary_diagnosis",
+    "output_contract": "strict_schema",
+    "output_mode": "strict_json",
+    "provider_schema_enabled": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "image_present": {
+          "type": "boolean",
+          "description": "true if an image was provided, false otherwise"
+        },
+        "can_diagnose": {
+          "type": "boolean",
+          "description": "true if a diagnosis can be given, false otherwise"
+        },
+        "differentials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other diagnoses being considered"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in the primary diagnosis, between 0 and 1"
+        },
+        "key_findings": {
+          "type": "string",
+          "description": "Main findings observed"
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "Diagnostic reasoning"
+        },
+        "primary_diagnosis": {
+          "type": "string",
+          "description": "Most likely diagnosis as a short phrase, or NO_DIAGNOSIS when no diagnosis can be made"
+        }
+      },
+      "required": [
+        "image_present",
+        "can_diagnose",
+        "differentials",
+        "confidence",
+        "key_findings",
+        "reasoning",
+        "primary_diagnosis"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "variant_id": "S9",
+    "name": "optional diagnosis",
+    "diagnosis_field": "primary_diagnosis",
+    "output_contract": "strict_schema",
+    "output_mode": "strict_json",
+    "provider_schema_enabled": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "image_present": {
+          "type": "boolean",
+          "description": "true if an image was provided, false otherwise"
+        },
+        "can_diagnose": {
+          "type": "boolean",
+          "description": "true if a diagnosis can be given, false otherwise"
+        },
+        "differentials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other diagnoses being considered"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in the primary diagnosis, between 0 and 1"
+        },
+        "key_findings": {
+          "type": "string",
+          "description": "Main findings observed"
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "Diagnostic reasoning"
+        },
+        "primary_diagnosis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Most likely diagnosis as a short phrase, or null"
+        }
+      },
+      "required": [
+        "image_present",
+        "can_diagnose",
+        "differentials",
+        "confidence",
+        "key_findings",
+        "reasoning",
+        "primary_diagnosis"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "variant_id": "S10",
+    "name": "no model image_present",
+    "diagnosis_field": "primary_diagnosis",
+    "output_contract": "strict_schema",
+    "output_mode": "strict_json",
+    "provider_schema_enabled": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "can_diagnose": {
+          "type": "boolean",
+          "description": "true if a diagnosis can be given, false otherwise"
+        },
+        "differentials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other diagnoses being considered"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in the primary diagnosis, between 0 and 1"
+        },
+        "key_findings": {
+          "type": "string",
+          "description": "Main findings observed"
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "Diagnostic reasoning"
+        },
+        "primary_diagnosis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Most likely diagnosis as a short phrase, or null"
+        }
+      },
+      "required": [
+        "can_diagnose",
+        "differentials",
+        "confidence",
+        "key_findings",
+        "reasoning",
+        "primary_diagnosis"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "variant_id": "S11",
+    "name": "system image metadata only",
+    "diagnosis_field": "primary_diagnosis",
+    "output_contract": "strict_schema",
+    "output_mode": "strict_json",
+    "provider_schema_enabled": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "can_diagnose": {
+          "type": "boolean",
+          "description": "true if a diagnosis can be given, false otherwise"
+        },
+        "differentials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other diagnoses being considered"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in the primary diagnosis, between 0 and 1"
+        },
+        "key_findings": {
+          "type": "string",
+          "description": "Main findings observed"
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "Diagnostic reasoning"
+        },
+        "primary_diagnosis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Most likely diagnosis as a short phrase, or null"
+        }
+      },
+      "required": [
+        "can_diagnose",
+        "differentials",
+        "confidence",
+        "key_findings",
+        "reasoning",
+        "primary_diagnosis"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "variant_id": "S12",
+    "name": "provider-enforced schema",
+    "diagnosis_field": "primary_diagnosis",
+    "output_contract": "strict_schema",
+    "output_mode": "strict_json",
+    "provider_schema_enabled": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "image_present": {
+          "type": "boolean",
+          "description": "true if an image was provided, false otherwise"
+        },
+        "can_diagnose": {
+          "type": "boolean",
+          "description": "true if a diagnosis can be given, false otherwise"
+        },
+        "differentials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other diagnoses being considered"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in the primary diagnosis, between 0 and 1"
+        },
+        "key_findings": {
+          "type": "string",
+          "description": "Main findings observed"
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "Diagnostic reasoning"
+        },
+        "primary_diagnosis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Most likely diagnosis as a short phrase, or null"
+        }
+      },
+      "required": [
+        "image_present",
+        "can_diagnose",
+        "differentials",
+        "confidence",
+        "key_findings",
+        "reasoning",
+        "primary_diagnosis"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "variant_id": "S13",
+    "name": "prompt-only JSON",
+    "diagnosis_field": "primary_diagnosis",
+    "output_contract": "prompt_json",
+    "output_mode": "loose_json",
+    "provider_schema_enabled": false,
+    "schema": null
+  },
+  {
+    "variant_id": "S14",
+    "name": "defensive actual-bytes contract",
+    "diagnosis_field": "primary_diagnosis",
+    "output_contract": "defensive_schema",
+    "output_mode": "strict_json",
+    "provider_schema_enabled": true,
+    "schema": {
+      "type": "object",
+      "properties": {
+        "image_present": {
+          "type": "boolean",
+          "description": "true if an image was provided, false otherwise"
+        },
+        "can_diagnose": {
+          "type": "boolean",
+          "description": "true if a diagnosis can be given, false otherwise"
+        },
+        "differentials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other diagnoses being considered"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in the primary diagnosis, between 0 and 1"
+        },
+        "key_findings": {
+          "type": "string",
+          "description": "Main findings observed"
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "Diagnostic reasoning"
+        },
+        "primary_diagnosis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Most likely diagnosis as a short phrase, or null"
+        }
+      },
+      "required": [
+        "image_present",
+        "can_diagnose",
+        "differentials",
+        "confidence",
+        "key_findings",
+        "reasoning",
+        "primary_diagnosis"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "variant_id": "S15",
+    "name": "prose-only response",
+    "diagnosis_field": "primary_diagnosis",
+    "output_contract": "prose_only",
+    "output_mode": "prose_only",
+    "provider_schema_enabled": false,
+    "schema": null
+  }
+]

@@ -1,0 +1,9 @@
+quantity,jsd_median,jsd_max,notes
+Claude Opus 4.7 demographic JSD (36 cells),0.000,0.834,
+GPT-5.4 demographic JSD (36 cells),0.314,0.590,
+Gemini 3.1 Pro demographic JSD (36 cells),0.010,0.045,
+"E2 paraphrase floor (Claude xray D0, pre-reg)",,0.000,"degenerate, 100% refusal"
+"E2b paraphrase floor, Claude Opus 4.7 (derm_65wm)",0.052,0.079,"non-degenerate, top-fab cell"
+"E2b paraphrase floor, GPT-5.4 (xray_32bm)",0.014,0.043,"non-degenerate, top-fab cell"
+"E2b paraphrase floor, Gemini 3.1 Pro (xray_32bf)",0.010,0.015,"non-degenerate, top-fab cell"
+E3 seed floor (Claude xray D0 three-way split),,0.000,

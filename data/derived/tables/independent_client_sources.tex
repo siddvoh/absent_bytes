@@ -1,0 +1,17 @@
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.1pt}
+\caption{\textbf{Independent client source regressions.} Python rows execute exact verified function ASTs. OpenClaw is a non-random, post-freeze holdout using exact TypeScript functions, an upstream gateway test, and a local adapter. The Goose row is source-derived because the released Rust file is not standalone. ADK and Goose request bodies are local projections. No provider is contacted.}
+\label{tab:independent-client-sources}
+\begin{tabular}{@{}p{.18\linewidth}p{.25\linewidth}p{.20\linewidth}p{.20\linewidth}@{}}
+\toprule
+Project & Probe & Before fix & After fix \\
+\midrule
+Open WebUI & exact Python AST & 0/2 image parts; 2/2 blocked & 2/2 image parts; 2/2 forwarded \\
+Google ADK & exact Python AST & 0/2 events; 2/2 blocked & 2/2 events; 2/2 forwarded \\
+Goose & source-derived branch & 0/4 task texts; 4/4 blocked & 4/4 task texts; 4/4 forwarded \\
+OpenClaw & exact TypeScript + gateway test & 0/2 images; 2/2 blocked & 2/2 images; 2/2 forwarded \\
+\bottomrule
+\end{tabular}
+\end{table}

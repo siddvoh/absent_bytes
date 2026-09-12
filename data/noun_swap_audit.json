@@ -1,0 +1,137 @@
+{
+  "audit_schema_version": 1,
+  "baseline_aggregate_cross_checks": [
+    {
+      "categorized_source_sha256": "9a7d459e4a9c9ac3a5791e804f4e7bb5d7cbc49daa02eb91c40c7d445fe7687d",
+      "condition_id": "claude_65wm_mole_e1",
+      "counts": {
+        "Melanoma": 94,
+        "NO_DIAGNOSIS": 6
+      },
+      "matched_existing_release": true
+    },
+    {
+      "categorized_source_sha256": "dc5e0675f96f75120136d9a9b8a18388f21ae00b7f6f50d3d4d5859ddb23609a",
+      "condition_id": "gpt54_65rf_mole_e1",
+      "counts": {
+        "Melanoma": 4,
+        "NO_DIAGNOSIS": 34,
+        "Seborrheic_Keratosis": 62
+      },
+      "matched_existing_release": true
+    }
+  ],
+  "checks": {
+    "baseline_cells_matched": 2,
+    "conditions_verified": 4,
+    "duplicate_local_record_keys": 0,
+    "network_calls": 0,
+    "prompt_pairs_with_only_noun_change": 2,
+    "repeat_label_sets_matched": 2,
+    "schema_valid_rows": 400,
+    "selected_field_rows": 400,
+    "unsafe_release_fields": 0
+  },
+  "comparison_summaries": [
+    {
+      "comparison_id": "claude_65wm_mole_vs_lesion",
+      "diagnosis_category_counts": {
+        "claude_65wm_lesion_e4": {
+          "NO_DIAGNOSIS": 100
+        },
+        "claude_65wm_mole_e1": {
+          "Melanoma": 94,
+          "NO_DIAGNOSIS": 6
+        }
+      },
+      "diagnosis_fields_occupied": {
+        "claude_65wm_lesion_e4": 0,
+        "claude_65wm_mole_e1": 94
+      },
+      "prompt_change": {
+        "from": "skin mole",
+        "to": "skin lesion"
+      },
+      "prompt_only_change_verified": true,
+      "repeat_label_set_identical": true,
+      "repeat_label_set_sha256": "b95cbd6fb979901bbc2a11f22d4bf7f182819e6e30c7baf40dfabfa2c56005ec"
+    },
+    {
+      "comparison_id": "gpt54_65rf_mole_vs_lesion",
+      "diagnosis_category_counts": {
+        "gpt54_65rf_lesion_e4": {
+          "NO_DIAGNOSIS": 35,
+          "Seborrheic_Keratosis": 65
+        },
+        "gpt54_65rf_mole_e1": {
+          "Melanoma": 4,
+          "NO_DIAGNOSIS": 34,
+          "Seborrheic_Keratosis": 62
+        }
+      },
+      "diagnosis_fields_occupied": {
+        "gpt54_65rf_lesion_e4": 65,
+        "gpt54_65rf_mole_e1": 66
+      },
+      "prompt_change": {
+        "from": "skin mole",
+        "to": "skin lesion"
+      },
+      "prompt_only_change_verified": true,
+      "repeat_label_set_identical": true,
+      "repeat_label_set_sha256": "b95cbd6fb979901bbc2a11f22d4bf7f182819e6e30c7baf40dfabfa2c56005ec"
+    }
+  ],
+  "condition_summaries": [
+    {
+      "can_diagnose_true": 0,
+      "condition_id": "claude_65wm_lesion_e4",
+      "diagnosis_category_counts": {
+        "NO_DIAGNOSIS": 100
+      },
+      "diagnosis_fields_occupied": 0,
+      "image_present_true": 51,
+      "rows": 100
+    },
+    {
+      "can_diagnose_true": 80,
+      "condition_id": "claude_65wm_mole_e1",
+      "diagnosis_category_counts": {
+        "Melanoma": 94,
+        "NO_DIAGNOSIS": 6
+      },
+      "diagnosis_fields_occupied": 94,
+      "image_present_true": 100,
+      "rows": 100
+    },
+    {
+      "can_diagnose_true": 65,
+      "condition_id": "gpt54_65rf_lesion_e4",
+      "diagnosis_category_counts": {
+        "NO_DIAGNOSIS": 35,
+        "Seborrheic_Keratosis": 65
+      },
+      "diagnosis_fields_occupied": 65,
+      "image_present_true": 100,
+      "rows": 100
+    },
+    {
+      "can_diagnose_true": 66,
+      "condition_id": "gpt54_65rf_mole_e1",
+      "diagnosis_category_counts": {
+        "Melanoma": 4,
+        "NO_DIAGNOSIS": 34,
+        "Seborrheic_Keratosis": 62
+      },
+      "diagnosis_fields_occupied": 66,
+      "image_present_true": 100,
+      "rows": 100
+    }
+  ],
+  "input_sha256": {
+    "diagnosis_distribution_counts.csv": "0b267f2740141fc4de296c2274758471beffda24768362333d159d1d72618dd9",
+    "noun_swap_conditions.json": "b3c5e2ee115f909392433e3de20cd3bfd43b3b796474212946ce81ea60114c2d",
+    "noun_swap_field_extracts.csv": "b1fee8e324c3fdee7fbbf386b77f6612b858e3089826b0ec33d4ed775b2c25e3"
+  },
+  "scope_note": "Selected author-retained terminal fields and source commitments are released. Complete responses and wire-level provider attestations are not released."
+}

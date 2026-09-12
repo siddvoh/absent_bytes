@@ -1,0 +1,270 @@
+{
+  "audit_name": "frozen-grid offline request-construction and transport replay",
+  "cost_usd": 0.0,
+  "dependencies": {
+    "google-auth": "2.48.0",
+    "google-genai": "1.62.0",
+    "historical_versions_exactly_pinned": false,
+    "httpx": "0.28.1",
+    "interpretation": "Replay uses the current recorded dependency environment. The paid-run requirements set minimum versions and did not pin exact package versions.",
+    "openai": "2.17.0"
+  },
+  "frozen_manifests": {
+    "gemini": {
+      "path": "data/manifests/gemini_task_manifest.csv",
+      "rebuild_mismatches": 0,
+      "rebuilt_rows": 9600,
+      "sha256": "98ed66fd4579348880c59d54ff742051202d355e36c5de9f929c7db128ed87ee"
+    },
+    "non_google": {
+      "path": "data/manifests/non_google_task_manifest.csv",
+      "rebuild_mismatches": 0,
+      "rebuilt_rows": 38400,
+      "sha256": "cf07f90b267203f4ed15971398903a38ee2d313aeb47e10ac2935110c1f31629"
+    }
+  },
+  "historical_evidence_boundary": "The paid runs stored pre-invocation request snapshots, not packet captures. This audit rebuilds the frozen manifests, compares current builder output with those snapshots, and separately reserializes every paid-run snapshot through the recorded transport family.",
+  "known_execution_contract_drift": {
+    "affected_variant": "S9 optional diagnosis",
+    "current_builder_vs_paid_snapshot_rows": 448,
+    "disposition": "Exclude S9 from matched or pooled schema claims. Retain every row and report the mixed historical contract in the release ledger.",
+    "paid_snapshot_contract": "The first-quarter non-Google S9 requests omitted primary_diagnosis from the required list for 448 rows.",
+    "providers": {
+      "anthropic": 150,
+      "llama4_maverick": 148,
+      "qwen3_vl_32b": 150
+    }
+  },
+  "matched_s0_s14": {
+    "candidate_pairs": 3000,
+    "contrast": "S0 baseline strict schema versus S14 defensive actual-byte instruction",
+    "eligible_pairs_identical_route_and_sampling_configuration": true,
+    "excluded_runtime_configuration_pair_ids": [
+      "anthropic:C1:046",
+      "anthropic:C2:099",
+      "llama4_maverick:C2:066",
+      "llama4_maverick:C2:067",
+      "llama4_maverick:C2:068",
+      "llama4_maverick:C2:069",
+      "llama4_maverick:C2:070",
+      "llama4_maverick:C2:071"
+    ],
+    "excluded_runtime_configuration_pairs": {
+      "anthropic": 2,
+      "llama4_maverick": 6
+    },
+    "excluded_runtime_configuration_total": 8,
+    "identical_schema_content": true,
+    "observed_body_difference_paths": {
+      "openrouter": [
+        "max_tokens",
+        "messages[0].content",
+        "response_format.json_schema.name"
+      ],
+      "vertex": [
+        "contents.parts[0].text"
+      ]
+    },
+    "openrouter_nonsemantic_schema_name_change_disclosed": true,
+    "pairs_exactly_matched": {
+      "openrouter": 2392,
+      "vertex": 600
+    },
+    "total_exactly_matched_pairs": 2992,
+    "unexpected_body_difference_pairs": 0
+  },
+  "model_calls": 0,
+  "network_calls": 0,
+  "paid_request_snapshot_sources": {
+    "gemini": {
+      "path": "private Gemini terminal-response source, excluded from release",
+      "sha256": "5854eb83ada3fea16d286e54c96112cb14addac4e5377bec5ceb9905f3360ecb",
+      "unique_success_snapshots": 9600
+    },
+    "non_google": {
+      "path": "private non-Google terminal-response source, excluded from release",
+      "sha256": "7859c1c2d15b7db926282dc1d9ac090364003cab251313eb6c0aba36f82ed319",
+      "unique_success_snapshots": 38400
+    }
+  },
+  "replay": {
+    "openrouter_openai_sdk": {
+      "current_builder_against_paid_snapshot": {
+        "body_mismatch_paths": {
+          "messages[0].content": 448,
+          "response_format.json_schema.schema.required.length": 448
+        },
+        "body_mismatch_rows": 448,
+        "body_mismatches_by_provider": {
+          "anthropic": 150,
+          "llama4_maverick": 148,
+          "qwen3_vl_32b": 150
+        },
+        "body_mismatches_by_provider_variant": {
+          "anthropic:S9": 150,
+          "llama4_maverick:S9": 148,
+          "qwen3_vl_32b:S9": 150
+        },
+        "body_mismatches_by_variant": {
+          "S9": 448
+        },
+        "exact_body_rows": 37952,
+        "interpretation": "The current builders reproduce the frozen manifest. Historical paid-run snapshots are authoritative where execution-time contracts differ.",
+        "snapshot_field_mismatch_paths": {
+          "messages[0].content": 448,
+          "response_format.json_schema.schema.required.length": 448
+        },
+        "snapshot_field_mismatch_rows": 448,
+        "snapshot_field_mismatches_by_variant": {
+          "S9": 448
+        }
+      },
+      "exact_paid_snapshot_reserialization": {
+        "aggregate_canonical_body_sha256": "028699c239142916dc72dfb2325d1da638025ddf63eaa577d174fe7a25e45d4c",
+        "body_bytes": 87638285,
+        "body_mismatches": 0,
+        "body_size_range": [
+          380,
+          2834
+        ],
+        "counts_by_provider": {
+          "anthropic": 9600,
+          "llama4_maverick": 9600,
+          "openai": 9600,
+          "qwen3_vl_32b": 9600
+        },
+        "counts_by_variant": {
+          "S0": 2400,
+          "S1": 2400,
+          "S10": 2400,
+          "S11": 2400,
+          "S12": 2400,
+          "S13": 2400,
+          "S14": 2400,
+          "S15": 2400,
+          "S2": 2400,
+          "S3": 2400,
+          "S4": 2400,
+          "S5": 2400,
+          "S6": 2400,
+          "S7": 2400,
+          "S8": 2400,
+          "S9": 2400
+        },
+        "image_reference_bodies": 0,
+        "request_body_field_sets": [
+          [
+            "include_reasoning",
+            "max_tokens",
+            "messages",
+            "model",
+            "provider",
+            "reasoning",
+            "response_format",
+            "seed",
+            "temperature",
+            "usage"
+          ],
+          [
+            "include_reasoning",
+            "max_tokens",
+            "messages",
+            "model",
+            "provider",
+            "reasoning",
+            "response_format",
+            "seed",
+            "usage"
+          ],
+          [
+            "include_reasoning",
+            "max_tokens",
+            "messages",
+            "model",
+            "provider",
+            "reasoning",
+            "seed",
+            "temperature",
+            "usage"
+          ],
+          [
+            "include_reasoning",
+            "max_tokens",
+            "messages",
+            "model",
+            "provider",
+            "reasoning",
+            "seed",
+            "usage"
+          ]
+        ],
+        "rows": 38400,
+        "text_only_bodies": 38400
+      },
+      "route": "https://openrouter.ai/api/v1/chat/completions",
+      "rows": 38400,
+      "runtime_max_tokens": {
+        "4000": 38221,
+        "800": 179
+      }
+    },
+    "vertex_stream_generate_content_rest": {
+      "aggregate_canonical_body_sha256": "7c5b0d1948374e5c8b17422e1895f8868a804094ba0b8a24002134bb987102f1",
+      "body_bytes": 11527832,
+      "body_size_range": [
+        308,
+        1575
+      ],
+      "counts_by_provider": {
+        "gemini": 9600
+      },
+      "counts_by_variant": {
+        "S0": 600,
+        "S1": 600,
+        "S10": 600,
+        "S11": 600,
+        "S12": 600,
+        "S13": 600,
+        "S14": 600,
+        "S15": 600,
+        "S2": 600,
+        "S3": 600,
+        "S4": 600,
+        "S5": 600,
+        "S6": 600,
+        "S7": 600,
+        "S8": 600,
+        "S9": 600
+      },
+      "historical_snapshot_body_mismatches": 0,
+      "historical_snapshot_field_mismatches": 0,
+      "image_reference_bodies": 0,
+      "request_body_field_sets": [
+        [
+          "contents",
+          "generationConfig"
+        ]
+      ],
+      "route": "https://aiplatform.googleapis.com/v1/projects/{project}/locations/global/publishers/google/models/gemini-3.1-pro-preview:streamGenerateContent",
+      "rows": 9600,
+      "text_only_bodies": 9600
+    }
+  },
+  "source_sha256": {
+    "configs/models.yaml": "77501f6275469f5c073904f0ae3a0e39f6907abd46cc79bc6c55df9fb5177628",
+    "requirements.txt": "46336c9e930b283295eae96500802d93f385cf6ad99bf33e21554ef3cb4f320a",
+    "scripts/part4_release/build_gemini_execution_manifest.py": "b5aa0f183f57cffa3e140d0d50dcf36842241385de3c3267389bb72fb4be25f6",
+    "scripts/part4_release/run_gemini_part4_waves.py": "1d18a9cd1d4312ff1604a56b49edd2459ab9d5180855a57acd58fd9a8c3f5dc2",
+    "scripts/schema_ablations/build_schema_ablation_tasks.py": "53400afc3c66aab1e14520148b41807bdd9dd8921a8505d3627e6deb669765bf",
+    "scripts/schema_ablations/common.py": "21f5ea4f84108600a60ad7a543f085aa99c8fbf6f9b80eb54f5f1f61e32f56c4",
+    "scripts/schema_ablations/run_schema_ablation_grid.py": "c7c6fada9cca89b13f2d999c758f8c85be8f3f5fa0cfc1273195d255403710f1",
+    "src/clients/gemini_client.py": "7d5d67f7dc4d34426c10eb0ed07fdc7d6af9567900bb457a51564d90e65b9959",
+    "src/clients/openrouter_client.py": "b85f4810b1b5d3fb6e31786c484651e9cd7237de8d54242381ef665d3bb9d05f",
+    "src/control_specs.py": "61d77e5f8b501413816af02584fd97b84e3536c4c27b202a81ede4d67122c1a3",
+    "src/schema_variants.py": "b5ea8b23e30ad659bbcc99fdffca2b57822c604b0ae2139c2f4094b67281959f"
+  },
+  "total_historical_snapshot_body_mismatches": 0,
+  "total_image_reference_bodies": 0,
+  "total_rows": 48000,
+  "total_text_only_bodies": 48000
+}

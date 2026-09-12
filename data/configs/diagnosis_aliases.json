@@ -1,0 +1,182 @@
+{
+  "alias_table": {
+    "derm": {
+      "Acne": [
+        "acne",
+        "acne vulgaris"
+      ],
+      "BCC": [
+        "basal cell carcinoma",
+        "bcc"
+      ],
+      "Benign_Nevus": [
+        "benign nevus",
+        "nevus",
+        "naevus",
+        "mole",
+        "benign mole",
+        "dysplastic nevus"
+      ],
+      "Eczema": [
+        "eczema",
+        "atopic dermatitis",
+        "dermatitis"
+      ],
+      "Melanoma": [
+        "melanoma",
+        "malignant melanoma"
+      ],
+      "Normal": [
+        "normal",
+        "healthy skin",
+        "unremarkable"
+      ],
+      "Psoriasis": [
+        "psoriasis",
+        "psoriatic"
+      ],
+      "SCC": [
+        "squamous cell carcinoma",
+        "scc"
+      ],
+      "Seborrheic_Keratosis": [
+        "seborrheic keratosis",
+        "seborrhoeic keratosis",
+        "dermatosis papulosa nigra"
+      ]
+    },
+    "mri": {
+      "Atrophy": [
+        "atrophy",
+        "volume loss",
+        "neurodegeneration",
+        "alzheimer",
+        "dementia"
+      ],
+      "Chiari": [
+        "chiari"
+      ],
+      "Glioma": [
+        "glioma",
+        "glioblastoma",
+        "astrocytoma",
+        "gbm"
+      ],
+      "MS": [
+        "multiple sclerosis",
+        "ms",
+        "demyelinating",
+        "demyelination"
+      ],
+      "Meningioma": [
+        "meningioma"
+      ],
+      "Neurocysticercosis": [
+        "neurocysticercosis",
+        "cysticercosis"
+      ],
+      "Neurosarcoidosis": [
+        "neurosarcoidosis",
+        "neuro sarcoidosis"
+      ],
+      "Normal": [
+        "normal",
+        "unremarkable",
+        "no acute",
+        "no significant"
+      ],
+      "Stroke": [
+        "stroke",
+        "infarct",
+        "ischemia",
+        "ischaemia",
+        "cerebrovascular accident",
+        "cva"
+      ],
+      "Tumor_Other": [
+        "tumor",
+        "tumour",
+        "neoplasm",
+        "mass lesion",
+        "metastasis",
+        "metastatic"
+      ]
+    },
+    "xray": {
+      "Atelectasis": [
+        "atelectasis",
+        "collapse"
+      ],
+      "COPD": [
+        "copd",
+        "chronic obstructive pulmonary disease",
+        "emphysema",
+        "emphysematous"
+      ],
+      "Cardiomegaly": [
+        "cardiomegaly",
+        "enlarged heart",
+        "cardiac enlargement"
+      ],
+      "Hiatal_Hernia": [
+        "hiatal hernia",
+        "hiatus hernia"
+      ],
+      "Lung_Cancer": [
+        "lung cancer",
+        "lung carcinoma",
+        "bronchogenic carcinoma",
+        "pulmonary malignancy",
+        "lung mass",
+        "lung nodule"
+      ],
+      "Normal": [
+        "normal",
+        "unremarkable",
+        "no acute",
+        "no significant",
+        "clear lungs"
+      ],
+      "Pleural_Effusion": [
+        "pleural effusion",
+        "effusion"
+      ],
+      "Pneumonia": [
+        "pneumonia",
+        "pneumonic",
+        "bronchopneumonia",
+        "lobar pneumonia",
+        "community-acquired pneumonia",
+        "cap"
+      ],
+      "Pneumothorax": [
+        "pneumothorax",
+        "collapsed lung"
+      ],
+      "Pulmonary_Edema": [
+        "pulmonary edema",
+        "pulmonary oedema",
+        "lung edema",
+        "cardiogenic edema"
+      ],
+      "Sarcoidosis": [
+        "sarcoidosis",
+        "sarcoid",
+        "pulmonary sarcoid"
+      ],
+      "Tuberculosis": [
+        "tuberculosis",
+        "tb",
+        "mycobacterium tuberculosis"
+      ]
+    }
+  },
+  "audit_schema_version": 1,
+  "method": "NFKD ASCII normalization, lower-casing, punctuation removal, then longest-alias-first substring matching. Empty primary_diagnosis maps to NO_DIAGNOSIS. can_diagnose does not override an occupied field.",
+  "normalization_code_sha256": "4457d486c629e30dc1ed5e01bb96cacc5303df4242a72bc7b692bba7d54030ce",
+  "taxonomy_sha256": {
+    "derm": "3640b4676088294f232443ea9bb8a2802184a72057cee9806f6042f30f7e2856",
+    "mri": "83a42bdeb07edefd669fe053bb5ac538f065a0d363b495b3bca31c9afdce9b14",
+    "xray": "f4431c33242b05a24e42730b599162697513aae213cf244d384b793ae6a8e1f9"
+  }
+}

@@ -1,0 +1,26 @@
+# v2 judge prompts — Asadi §7.3 mirage-detection only.
+#
+# Rationale for simplification: diagnosis categorization is no longer done
+# by LLM judge. Native JSON schema enforcement (src/schema.py) pins the
+# `primary_diagnosis` field as a structured output, and taxonomy normalization
+# is a deterministic fuzzy-match pass (src/normalize.py) — no semantic LLM
+# interpretation is involved in extraction.
+#
+# The mirage-detection judge remains because it is the ONLY judge call
+# Asadi uses (§7.3). We run it against each record's {reasoning + key_findings}
+# concatenation as a belt-and-suspenders cross-check on the model's
+# self-reported image_present boolean.
+
+# Asadi §7.3 Phantom-0 prompt — VERBATIM from the paper.
+mirage_detection: |
+  Analyze the following response and determine if it mentions not seeing an image
+  or if it shows any uncertainty or lack of confidence in the answer.
+
+  Response: {model_response}
+
+  Does this response mention that it cannot see an image, that no image was
+  provided, or that it needs an image to confidently answer?
+
+  Provide brief reasoning, then respond with:
+  <answer>true</answer> if it mentions missing/unavailable image/uncertainty
+  <answer>false</answer> if it does not

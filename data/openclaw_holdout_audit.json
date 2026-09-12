@@ -1,0 +1,198 @@
+{
+  "audit_schema_version": 1,
+  "caveats": [
+    "After the predicate and guard were frozen, the holdout was deliberately selected from a public report. The sample was neither random nor preregistered.",
+    "The native result runs the exact upstream gateway test with a mocked agent command and no provider or model. It is not a production OpenClaw deployment.",
+    "Normal offline verification executes exact upstream TypeScript extraction and command-input functions, then uses a thin author-written adapter to the frozen generic RequestView.",
+    "This single external route establishes neither unseen-fault coverage nor incident or deployment frequency."
+  ],
+  "execution": {
+    "credentials_required": false,
+    "normal_verification_network_calls": 0,
+    "provider_or_model_calls": 0
+  },
+  "freeze": {
+    "freeze_schema_version": 1,
+    "guard_source_changed_for_holdout": false,
+    "holdout_selected_at_utc": "2026-07-17T09:53:20Z",
+    "openclaw_revisions": {
+      "fix": "9c86a9fd23469e7c10b80be3ed6503ee9cd8da0e",
+      "fix_url": "https://github.com/openclaw/openclaw/commit/9c86a9fd23469e7c10b80be3ed6503ee9cd8da0e",
+      "parent": "36e2e04a32c2a94eafc83fd7e1e82a89045e2e9f"
+    },
+    "pre_holdout_commitment": {
+      "frozen_packet_manifest_sha256": "2bddd061d0ddaad4aa27243fe1a95c64b5a0c78106eec597687426e671f0a5d4",
+      "guard_source_sha256": {
+        "code/scripts/audit_enforcement_baselines.py": "880a7622516635aced5ab3ffc7703a855ee697e171bb269ae7ac395ce61e95ca",
+        "code/scripts/audit_evidence_binding_matrix.py": "0156d09e2890e5462ea116746c82e4f3da1378b74fa71a5271977c14b16ac25f",
+        "code/scripts/fault_injection_pipeline.py": "7b618efb4589f5aa5f6be891625a8a9176b1d80c5ecbf7326006dc61ba3b01de"
+      },
+      "release_manifest_sha256": "347c820586135ebbcc2cb30af9d0591a29c9c5d6b9cb1804b8679b0a545b37f7"
+    },
+    "preregistered_or_random_sample": false,
+    "selection": {
+      "issue_url": "https://github.com/openclaw/openclaw/issues/18583",
+      "kind": "post-definition non-random external holdout",
+      "project": "openclaw/openclaw",
+      "pull_request_url": "https://github.com/openclaw/openclaw/pull/34068",
+      "rationale": "public image-omission report with an independently authored upstream before/fix regression test"
+    }
+  },
+  "native_regression": {
+    "command": "pnpm exec vitest run --config vitest.gateway.config.ts src/gateway/openai-http.test.ts --pool=forks --maxWorkers=1",
+    "execution": {
+      "agent_command_mocked": true,
+      "credentials_required": false,
+      "full_gateway_handler_started": true,
+      "localhost_http": true,
+      "provider_or_model_calls": 0
+    },
+    "fixed": {
+      "commit": "9c86a9fd23469e7c10b80be3ed6503ee9cd8da0e",
+      "exit_status": 0,
+      "failed": 0,
+      "passed": 4,
+      "result": "passed"
+    },
+    "parent_with_upstream_test_only_patch": {
+      "assertion": "agentCommand images expected one PNG; received undefined",
+      "commit": "36e2e04a32c2a94eafc83fd7e1e82a89045e2e9f",
+      "exit_status": 1,
+      "failed": 1,
+      "passed": 3,
+      "result": "failed"
+    },
+    "test_patch": {
+      "file": "third_party/openclaw/native_regression_test.patch",
+      "sha256": "eb152b9bca99358cfa5912d3288cb091b1c28e5898a6d5dabf12a4f2282edf5b"
+    },
+    "toolchain": {
+      "node": "v24.14.1",
+      "os": "Darwin 25.5.0 arm64",
+      "pnpm": "10.23.0",
+      "vitest": "4.0.18"
+    }
+  },
+  "source": {
+    "fix_commit": "9c86a9fd23469e7c10b80be3ed6503ee9cd8da0e",
+    "fix_url": "https://github.com/openclaw/openclaw/commit/9c86a9fd23469e7c10b80be3ed6503ee9cd8da0e",
+    "issue_url": "https://github.com/openclaw/openclaw/issues/18583",
+    "license": {
+      "file": "third_party/openclaw/LICENSE",
+      "git_blob_sha1": "f7b526698bb7ed2d26d96c49f2f32234c88f69bc",
+      "sha256": "62316704df7426e5a79d2827ff8aca36e9abb3a73b8e68557030749ebefec667"
+    },
+    "lock": {
+      "git_blob_sha1": "79313de6f9f4b3c49f886e1919e6cd5fd00941e0",
+      "path": "pnpm-lock.yaml",
+      "sha256": "e8ddb3f877d1de7bbdebb0d99e6c399c55a286d09b8d53a4ee7a6039782a5370"
+    },
+    "parent_commit": "36e2e04a32c2a94eafc83fd7e1e82a89045e2e9f",
+    "project": "openclaw/openclaw",
+    "pull_request_url": "https://github.com/openclaw/openclaw/pull/34068",
+    "source_file": "src/gateway/openai-http.ts",
+    "source_files": {
+      "fixed": {
+        "commit": "9c86a9fd23469e7c10b80be3ed6503ee9cd8da0e",
+        "file": "third_party/openclaw/openai_http_fix.ts",
+        "git_blob_sha1": "1f37dfb1fae6afc1c3235238daa97c5ff165d162",
+        "sha256": "d79b2846dd2f05b9d0d19c37bb53992bc360f35e23cacb3e8992fd4939662c10"
+      },
+      "parent": {
+        "commit": "36e2e04a32c2a94eafc83fd7e1e82a89045e2e9f",
+        "file": "third_party/openclaw/openai_http_parent.ts",
+        "git_blob_sha1": "10e8d713feed548faba7ef3d0c40a1e70eaab050",
+        "sha256": "23eabe7181281edcc518372f6fd068273f6b3ab6354bcd623a2ddf8c911d5a15"
+      }
+    },
+    "test_file": "src/gateway/openai-http.test.ts",
+    "test_files": {
+      "fixed": {
+        "commit": "9c86a9fd23469e7c10b80be3ed6503ee9cd8da0e",
+        "file": "third_party/openclaw/openai_http_fix.test.ts",
+        "git_blob_sha1": "f3ab97093ba51618af0cf109c57f297af6647e07",
+        "sha256": "bac6ac56f54cb5b7c9b5c81dfd3bed2d35f7c9fe18052da2b2f8ecfc1dd85358"
+      },
+      "parent": {
+        "commit": "36e2e04a32c2a94eafc83fd7e1e82a89045e2e9f",
+        "file": "third_party/openclaw/openai_http_parent.test.ts",
+        "git_blob_sha1": "c9d429521a46dc165416dc5e72b8f63722d0b0c0",
+        "sha256": "a01f70ae9848c47e7336d55bc2bcb83091afb827c3382e3f6a21332601df763a"
+      }
+    }
+  },
+  "source_execution": {
+    "adapter": {
+      "authored_after_holdout_selection": true,
+      "description": "thin adapter from captured OpenClaw agentCommand image objects to the frozen generic RequestView",
+      "guard_source_modified": false
+    },
+    "cases": [
+      {
+        "case_id": "openclaw-png",
+        "fixed": {
+          "command_input_sha256": "014df4d30fc9a107bbba5e4a3ca78baab4efba1a0472151fee1f9be1bf5b08fe",
+          "guard_decision": "forwarded",
+          "guard_reason": "caller_owned_binding_satisfied",
+          "image_count_at_agent_command": 1,
+          "message": "Describe the local image/png fixture."
+        },
+        "mime_type": "image/png",
+        "parent": {
+          "command_input_sha256": "4407f949d6195dd39980ec1cbcb8cdb11a539d1974a912a33c53459eedfc67ab",
+          "guard_decision": "blocked",
+          "guard_reason": "missing_image",
+          "image_count_at_agent_command": 0,
+          "message": "Describe the local image/png fixture."
+        }
+      },
+      {
+        "case_id": "openclaw-jpeg",
+        "fixed": {
+          "command_input_sha256": "d8ddb1f201310bf2e42e1801c0459c2dcabb5e82db9f41549d341cdebd95acba",
+          "guard_decision": "forwarded",
+          "guard_reason": "caller_owned_binding_satisfied",
+          "image_count_at_agent_command": 1,
+          "message": "Describe the local image/jpeg fixture."
+        },
+        "mime_type": "image/jpeg",
+        "parent": {
+          "command_input_sha256": "ebef9d7fe15db00e13d55cf265df66585c9f871c3cb30a4a9a382082d557b6c0",
+          "guard_decision": "blocked",
+          "guard_reason": "missing_image",
+          "image_count_at_agent_command": 0,
+          "message": "Describe the local image/jpeg fixture."
+        }
+      }
+    ],
+    "exact_function_source_sha256": {
+      "fixed": {
+        "asMessages": "7112d13fd7bc3f105e717462a5639fbd36025503db172f92325a004e57eec78a",
+        "buildAgentCommandInput": "e025aa800f081d3a7cad4d47c7c15980d641cd63d0183e6e6497ed286e0b7e80",
+        "extractImageUrls": "897b53b90bf512f21b6b42ed7f8e72d672ce68fabe974b60f0c79298e7806ebe",
+        "extractTextContent": "7ab0efed9d6637c9ec1788c990b422ff5efe5cf20fc5ca8cc6469fcd3ecc8358",
+        "parseImageUrlToSource": "f9c4bfaeb5628a4d36e5fcf2cb76ff84d145304591aaa4696aa7b8eda84a4be1",
+        "resolveActiveTurnContext": "316d12bf6a147ce47aa8864aa40f9f25b367586dffa3404c89315c54c7394a20",
+        "resolveImageUrlPart": "f5148cb3f25cd75f59a0bdbd39d8a7e10d18985e4d0cab968ea4971782642792"
+      },
+      "parent": {
+        "asMessages": "7112d13fd7bc3f105e717462a5639fbd36025503db172f92325a004e57eec78a",
+        "buildAgentCommandInput": "f60e719db5f311f4b4ae7ef602f433ab49742f1d7dfb2d5dfa974dcfc063e29e",
+        "extractTextContent": "7ab0efed9d6637c9ec1788c990b422ff5efe5cf20fc5ca8cc6469fcd3ecc8358"
+      }
+    },
+    "execution": {
+      "exact_upstream_typescript_functions_executed": true,
+      "network_calls": 0,
+      "provider_or_model_calls": 0,
+      "valid_data_uri_resolver": "local no-network adapter"
+    },
+    "totals": {
+      "affected_cases": 2,
+      "fixed_contract_forwarded": 2,
+      "fixed_images_at_agent_command": 2,
+      "parent_contract_blocked": 2,
+      "parent_images_at_agent_command": 0
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "freeze_schema_version": 1,
+  "guard_source_changed_for_holdout": false,
+  "holdout_selected_at_utc": "2026-07-17T09:53:20Z",
+  "iteration43_commitment": {
+    "final_pdf_sha256": "812ec13da358417a30ff2b2e50af1f304b9cd910672dd30a8119b3054b3cc5a4",
+    "frozen_packet_manifest_sha256": "2bddd061d0ddaad4aa27243fe1a95c64b5a0c78106eec597687426e671f0a5d4",
+    "guard_source_sha256": {
+      "code/scripts/audit_enforcement_baselines.py": "880a7622516635aced5ab3ffc7703a855ee697e171bb269ae7ac395ce61e95ca",
+      "code/scripts/audit_evidence_binding_matrix.py": "0156d09e2890e5462ea116746c82e4f3da1378b74fa71a5271977c14b16ac25f",
+      "code/scripts/fault_injection_pipeline.py": "7b618efb4589f5aa5f6be891625a8a9176b1d80c5ecbf7326006dc61ba3b01de"
+    },
+    "release_manifest_sha256": "347c820586135ebbcc2cb30af9d0591a29c9c5d6b9cb1804b8679b0a545b37f7"
+  },
+  "openclaw_revisions": {
+    "fix": "9c86a9fd23469e7c10b80be3ed6503ee9cd8da0e",
+    "fix_url": "https://github.com/openclaw/openclaw/commit/9c86a9fd23469e7c10b80be3ed6503ee9cd8da0e",
+    "parent": "36e2e04a32c2a94eafc83fd7e1e82a89045e2e9f"
+  },
+  "preregistered_or_random_sample": false,
+  "selection": {
+    "issue_url": "https://github.com/openclaw/openclaw/issues/18583",
+    "kind": "post-definition non-random external holdout",
+    "project": "openclaw/openclaw",
+    "pull_request_url": "https://github.com/openclaw/openclaw/pull/34068",
+    "rationale": "public image-omission report with an independently authored upstream before/fix regression test"
+  }
+}

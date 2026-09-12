@@ -1,0 +1,15 @@
+domain: chest_xray
+categories:
+  - Pneumonia
+  - Pulmonary_Edema
+  - Pleural_Effusion
+  - Pneumothorax
+  - Cardiomegaly
+  - Atelectasis
+  - Normal
+  - Lung_Cancer
+  - Tuberculosis
+  - Sarcoidosis
+  - COPD
+  - Hiatal_Hernia
+  - Other

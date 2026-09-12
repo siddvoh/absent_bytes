@@ -1,0 +1,410 @@
+[
+  {
+    "client_status": "blocked_missing_evidence",
+    "full_null_response": true,
+    "initial_image_byte_count": 21,
+    "model_invocation_count": 0,
+    "pathway_trace": [
+      {
+        "attachment_metadata": [
+          "image-1"
+        ],
+        "blob_available": true,
+        "blob_pointer": "blob://image-1",
+        "image_byte_count": 21,
+        "rendered_attachment_count": 1,
+        "retry_mode": null,
+        "scenario": "partial_upload_failure",
+        "signed_url_valid": true,
+        "stage": "ui_committed_attachment"
+      },
+      {
+        "attachment_metadata": [
+          "image-1"
+        ],
+        "blob_available": false,
+        "blob_pointer": null,
+        "image_byte_count": 0,
+        "rendered_attachment_count": 1,
+        "retry_mode": null,
+        "scenario": "partial_upload_failure",
+        "signed_url_valid": true,
+        "stage": "upload_failed_after_ui_commit"
+      }
+    ],
+    "pathway_trace_sha256": "5e00678e6738fbb21ad3705e1d170b5d87ad7d8c1f072ffc6a17bbdf7ae10a6d",
+    "preflight_allowed": false,
+    "preflight_reason": "missing_image_bytes",
+    "rendered_attachment_count": 1,
+    "response": {
+      "can_diagnose": false,
+      "confidence": 0,
+      "differentials": [],
+      "image_present": false,
+      "key_findings": "",
+      "primary_diagnosis": null,
+      "reasoning": ""
+    },
+    "scenario": "partial_upload_failure",
+    "serialized_body": "{\"attachment_metadata\":[\"image-1\"],\"image_parts\":[],\"messages\":[{\"content\":\"number of image attachments: 1\\nDescribe this chest X ray and provide the final diagnosis.\",\"role\":\"user\"}]}",
+    "serialized_body_sha256": "e461a36a5c8d732b49377bc4168aa8d1bb39382337860463e4dc0728e548914e",
+    "serialized_image_byte_count": 0
+  },
+  {
+    "client_status": "blocked_missing_evidence",
+    "full_null_response": true,
+    "initial_image_byte_count": 21,
+    "model_invocation_count": 0,
+    "pathway_trace": [
+      {
+        "attachment_metadata": [
+          "image-1"
+        ],
+        "blob_available": true,
+        "blob_pointer": "blob://image-1",
+        "image_byte_count": 21,
+        "rendered_attachment_count": 1,
+        "retry_mode": null,
+        "scenario": "retry_reconstruction_loses_binary",
+        "signed_url_valid": true,
+        "stage": "first_request_has_bytes"
+      },
+      {
+        "attachment_metadata": [
+          "image-1"
+        ],
+        "blob_available": true,
+        "blob_pointer": "blob://image-1",
+        "image_byte_count": 0,
+        "rendered_attachment_count": 1,
+        "retry_mode": "text_metadata_only",
+        "scenario": "retry_reconstruction_loses_binary",
+        "signed_url_valid": true,
+        "stage": "retry_rebuilt_from_text_metadata"
+      }
+    ],
+    "pathway_trace_sha256": "23289feb58ee1f686a3ad93f49431612ac3f2b6a384bdf0c59dea0f1281ebe5d",
+    "preflight_allowed": false,
+    "preflight_reason": "missing_image_bytes",
+    "rendered_attachment_count": 1,
+    "response": {
+      "can_diagnose": false,
+      "confidence": 0,
+      "differentials": [],
+      "image_present": false,
+      "key_findings": "",
+      "primary_diagnosis": null,
+      "reasoning": ""
+    },
+    "scenario": "retry_reconstruction_loses_binary",
+    "serialized_body": "{\"attachment_metadata\":[\"image-1\"],\"image_parts\":[],\"messages\":[{\"content\":\"number of image attachments: 1\\nDescribe this chest X ray and provide the final diagnosis.\",\"role\":\"user\"}]}",
+    "serialized_body_sha256": "e461a36a5c8d732b49377bc4168aa8d1bb39382337860463e4dc0728e548914e",
+    "serialized_image_byte_count": 0
+  },
+  {
+    "client_status": "blocked_missing_evidence",
+    "full_null_response": true,
+    "initial_image_byte_count": 21,
+    "model_invocation_count": 0,
+    "pathway_trace": [
+      {
+        "attachment_metadata": [
+          "image-1"
+        ],
+        "blob_available": true,
+        "blob_pointer": "blob://image-1",
+        "image_byte_count": 21,
+        "rendered_attachment_count": 1,
+        "retry_mode": null,
+        "scenario": "adapter_drops_binary",
+        "signed_url_valid": true,
+        "stage": "adapter_input_has_bytes"
+      },
+      {
+        "attachment_metadata": [
+          "image-1"
+        ],
+        "blob_available": true,
+        "blob_pointer": "blob://image-1",
+        "image_byte_count": 0,
+        "rendered_attachment_count": 1,
+        "retry_mode": null,
+        "scenario": "adapter_drops_binary",
+        "signed_url_valid": true,
+        "stage": "adapter_output_text_only"
+      }
+    ],
+    "pathway_trace_sha256": "c713e5ff5e1be73256f2df981e5fb84c193d0e327bf0049500db870d5a9c35d1",
+    "preflight_allowed": false,
+    "preflight_reason": "missing_image_bytes",
+    "rendered_attachment_count": 1,
+    "response": {
+      "can_diagnose": false,
+      "confidence": 0,
+      "differentials": [],
+      "image_present": false,
+      "key_findings": "",
+      "primary_diagnosis": null,
+      "reasoning": ""
+    },
+    "scenario": "adapter_drops_binary",
+    "serialized_body": "{\"attachment_metadata\":[\"image-1\"],\"image_parts\":[],\"messages\":[{\"content\":\"number of image attachments: 1\\nDescribe this chest X ray and provide the final diagnosis.\",\"role\":\"user\"}]}",
+    "serialized_body_sha256": "e461a36a5c8d732b49377bc4168aa8d1bb39382337860463e4dc0728e548914e",
+    "serialized_image_byte_count": 0
+  },
+  {
+    "client_status": "blocked_missing_evidence",
+    "full_null_response": true,
+    "initial_image_byte_count": 21,
+    "model_invocation_count": 0,
+    "pathway_trace": [
+      {
+        "attachment_metadata": [
+          "image-1"
+        ],
+        "blob_available": true,
+        "blob_pointer": "blob://image-1",
+        "image_byte_count": 21,
+        "rendered_attachment_count": 1,
+        "retry_mode": null,
+        "scenario": "agent_handoff_text_only",
+        "signed_url_valid": true,
+        "stage": "originating_agent_has_bytes"
+      },
+      {
+        "attachment_metadata": [
+          "image-1"
+        ],
+        "blob_available": true,
+        "blob_pointer": "blob://image-1",
+        "image_byte_count": 0,
+        "rendered_attachment_count": 1,
+        "retry_mode": null,
+        "scenario": "agent_handoff_text_only",
+        "signed_url_valid": true,
+        "stage": "handoff_forwards_rendered_text_only"
+      }
+    ],
+    "pathway_trace_sha256": "e5dd2f803c5b296f2bd5135ee4a5f237180fdf4f32f1e84b2ca71668a20c524f",
+    "preflight_allowed": false,
+    "preflight_reason": "missing_image_bytes",
+    "rendered_attachment_count": 1,
+    "response": {
+      "can_diagnose": false,
+      "confidence": 0,
+      "differentials": [],
+      "image_present": false,
+      "key_findings": "",
+      "primary_diagnosis": null,
+      "reasoning": ""
+    },
+    "scenario": "agent_handoff_text_only",
+    "serialized_body": "{\"attachment_metadata\":[\"image-1\"],\"image_parts\":[],\"messages\":[{\"content\":\"number of image attachments: 1\\nDescribe this chest X ray and provide the final diagnosis.\",\"role\":\"user\"}]}",
+    "serialized_body_sha256": "e461a36a5c8d732b49377bc4168aa8d1bb39382337860463e4dc0728e548914e",
+    "serialized_image_byte_count": 0
+  },
+  {
+    "client_status": "blocked_missing_evidence",
+    "full_null_response": true,
+    "initial_image_byte_count": 21,
+    "model_invocation_count": 0,
+    "pathway_trace": [
+      {
+        "attachment_metadata": [
+          "image-1"
+        ],
+        "blob_available": true,
+        "blob_pointer": "blob://image-1",
+        "image_byte_count": 21,
+        "rendered_attachment_count": 1,
+        "retry_mode": null,
+        "scenario": "stale_ui_attachment_count",
+        "signed_url_valid": true,
+        "stage": "session_has_uploaded_blob"
+      },
+      {
+        "attachment_metadata": [
+          "image-1"
+        ],
+        "blob_available": false,
+        "blob_pointer": "blob://image-1",
+        "image_byte_count": 0,
+        "rendered_attachment_count": 1,
+        "retry_mode": null,
+        "scenario": "stale_ui_attachment_count",
+        "signed_url_valid": true,
+        "stage": "session_restored_without_blob"
+      }
+    ],
+    "pathway_trace_sha256": "0b56b0e84ac1da5c3c0ef3e580aff9d5e58fc0abbc823cf357539594881fa357",
+    "preflight_allowed": false,
+    "preflight_reason": "missing_image_bytes",
+    "rendered_attachment_count": 1,
+    "response": {
+      "can_diagnose": false,
+      "confidence": 0,
+      "differentials": [],
+      "image_present": false,
+      "key_findings": "",
+      "primary_diagnosis": null,
+      "reasoning": ""
+    },
+    "scenario": "stale_ui_attachment_count",
+    "serialized_body": "{\"attachment_metadata\":[\"image-1\"],\"image_parts\":[],\"messages\":[{\"content\":\"number of image attachments: 1\\nDescribe this chest X ray and provide the final diagnosis.\",\"role\":\"user\"}]}",
+    "serialized_body_sha256": "e461a36a5c8d732b49377bc4168aa8d1bb39382337860463e4dc0728e548914e",
+    "serialized_image_byte_count": 0
+  },
+  {
+    "client_status": "blocked_missing_evidence",
+    "full_null_response": true,
+    "initial_image_byte_count": 21,
+    "model_invocation_count": 0,
+    "pathway_trace": [
+      {
+        "attachment_metadata": [
+          "image-1"
+        ],
+        "blob_available": true,
+        "blob_pointer": "blob://image-1",
+        "image_byte_count": 21,
+        "rendered_attachment_count": 1,
+        "retry_mode": null,
+        "scenario": "queue_blob_loss",
+        "signed_url_valid": true,
+        "stage": "queue_enqueued_with_blob"
+      },
+      {
+        "attachment_metadata": [
+          "image-1"
+        ],
+        "blob_available": false,
+        "blob_pointer": "blob://image-1",
+        "image_byte_count": 0,
+        "rendered_attachment_count": 1,
+        "retry_mode": null,
+        "scenario": "queue_blob_loss",
+        "signed_url_valid": true,
+        "stage": "queue_worker_cannot_resolve_blob"
+      }
+    ],
+    "pathway_trace_sha256": "224e6698c53260b8bec59b4ad52d467bac728d94f003bb4cdf4908bdc3b686ce",
+    "preflight_allowed": false,
+    "preflight_reason": "missing_image_bytes",
+    "rendered_attachment_count": 1,
+    "response": {
+      "can_diagnose": false,
+      "confidence": 0,
+      "differentials": [],
+      "image_present": false,
+      "key_findings": "",
+      "primary_diagnosis": null,
+      "reasoning": ""
+    },
+    "scenario": "queue_blob_loss",
+    "serialized_body": "{\"attachment_metadata\":[\"image-1\"],\"image_parts\":[],\"messages\":[{\"content\":\"number of image attachments: 1\\nDescribe this chest X ray and provide the final diagnosis.\",\"role\":\"user\"}]}",
+    "serialized_body_sha256": "e461a36a5c8d732b49377bc4168aa8d1bb39382337860463e4dc0728e548914e",
+    "serialized_image_byte_count": 0
+  },
+  {
+    "client_status": "blocked_missing_evidence",
+    "full_null_response": true,
+    "initial_image_byte_count": 21,
+    "model_invocation_count": 0,
+    "pathway_trace": [
+      {
+        "attachment_metadata": [
+          "image-1"
+        ],
+        "blob_available": true,
+        "blob_pointer": "blob://image-1",
+        "image_byte_count": 21,
+        "rendered_attachment_count": 1,
+        "retry_mode": null,
+        "scenario": "signed_url_expired",
+        "signed_url_valid": true,
+        "stage": "signed_url_resolves"
+      },
+      {
+        "attachment_metadata": [
+          "image-1"
+        ],
+        "blob_available": true,
+        "blob_pointer": "blob://image-1",
+        "image_byte_count": 0,
+        "rendered_attachment_count": 1,
+        "retry_mode": null,
+        "scenario": "signed_url_expired",
+        "signed_url_valid": false,
+        "stage": "signed_url_resolution_expired"
+      }
+    ],
+    "pathway_trace_sha256": "4e84a4c2ce9e1a4896036d2299fb1a78d178f84187fad316f7b161587398b52c",
+    "preflight_allowed": false,
+    "preflight_reason": "missing_image_bytes",
+    "rendered_attachment_count": 1,
+    "response": {
+      "can_diagnose": false,
+      "confidence": 0,
+      "differentials": [],
+      "image_present": false,
+      "key_findings": "",
+      "primary_diagnosis": null,
+      "reasoning": ""
+    },
+    "scenario": "signed_url_expired",
+    "serialized_body": "{\"attachment_metadata\":[\"image-1\"],\"image_parts\":[],\"messages\":[{\"content\":\"number of image attachments: 1\\nDescribe this chest X ray and provide the final diagnosis.\",\"role\":\"user\"}]}",
+    "serialized_body_sha256": "e461a36a5c8d732b49377bc4168aa8d1bb39382337860463e4dc0728e548914e",
+    "serialized_image_byte_count": 0
+  },
+  {
+    "client_status": "blocked_missing_evidence",
+    "full_null_response": true,
+    "initial_image_byte_count": 21,
+    "model_invocation_count": 0,
+    "pathway_trace": [
+      {
+        "attachment_metadata": [
+          "image-1"
+        ],
+        "blob_available": true,
+        "blob_pointer": "blob://image-1",
+        "image_byte_count": 21,
+        "rendered_attachment_count": 1,
+        "retry_mode": null,
+        "scenario": "sdk_text_only_retry",
+        "signed_url_valid": true,
+        "stage": "sdk_first_attempt_has_image_part"
+      },
+      {
+        "attachment_metadata": [
+          "image-1"
+        ],
+        "blob_available": true,
+        "blob_pointer": "blob://image-1",
+        "image_byte_count": 0,
+        "rendered_attachment_count": 1,
+        "retry_mode": "text_parts_only",
+        "scenario": "sdk_text_only_retry",
+        "signed_url_valid": true,
+        "stage": "sdk_retry_copies_text_parts_only"
+      }
+    ],
+    "pathway_trace_sha256": "4e9efb212581c51449d7f26845c7ae665c641c2dd7f10c7354bb7ce388040ab1",
+    "preflight_allowed": false,
+    "preflight_reason": "missing_image_bytes",
+    "rendered_attachment_count": 1,
+    "response": {
+      "can_diagnose": false,
+      "confidence": 0,
+      "differentials": [],
+      "image_present": false,
+      "key_findings": "",
+      "primary_diagnosis": null,
+      "reasoning": ""
+    },
+    "scenario": "sdk_text_only_retry",
+    "serialized_body": "{\"attachment_metadata\":[\"image-1\"],\"image_parts\":[],\"messages\":[{\"content\":\"number of image attachments: 1\\nDescribe this chest X ray and provide the final diagnosis.\",\"role\":\"user\"}]}",
+    "serialized_body_sha256": "e461a36a5c8d732b49377bc4168aa8d1bb39382337860463e4dc0728e548914e",
+    "serialized_image_byte_count": 0
+  }
+]

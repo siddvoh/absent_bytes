@@ -1,0 +1,19 @@
+# Google ADK Source Snapshots
+
+This directory contains the exact `contents.py` file immediately before and
+after Google ADK commit
+[`f35d129b4c59d381e95418725d6eaa072ca7720a`](https://github.com/google/adk-python/commit/f35d129b4c59d381e95418725d6eaa072ca7720a).
+That upstream fix changed the context filter from inspecting only the first
+part to checking every part. Before the fix, a leading empty part could suppress
+later task text or image data.
+
+| File | Revision | SHA-256 | Git blob |
+|---|---|---|---|
+| `contents_before.py` | `589f15cb273b1b83a87f0c3145880344ed5b1b91` | `18b923d8b3898f575099efe20e384febd2cd82d1e685070f69cc2955fd93a67e` | `39902e85475a48f6ff87c585727779a28a5a173c` |
+| `contents_after.py` | `f35d129b4c59d381e95418725d6eaa072ca7720a` | `f9fa1ec5526c13b5cfe8f40405d385a178da0976c65823cab00b5d97c49cf340` | `ce0df37e39bd324b587bb634a54264fd45bc04f0` |
+
+The files remain under the upstream Apache-2.0 license reproduced in
+`LICENSE`. The release audit executes the exact `_is_part_invisible` and
+`_contains_empty_content` function ASTs from each file with local stand-ins for
+ADK event objects. It does
+not launch an ADK server, invoke an agent, or contact a model or provider.

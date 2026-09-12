@@ -1,0 +1,212 @@
+# Model configuration, aligned to Asadi (arXiv:2603.21687) section 7.1.
+# Every value below is either a direct Asadi quote or a probe-validated
+# equivalent. See docs/superpowers/specs/2026-04-18-json-protocol-redesign.md
+# for the full derivation and probe evidence.
+#
+# Structured output is routed through OpenRouter for all primary models in the
+# EMNLP controls. Provider pinning is explicit per model so calls use the
+# configured direct-key endpoints where available.
+#
+# CoT capture (DEV-008):
+#   anthropic: NONE. Forced tool_use disables thinking (API 400:
+#              "Thinking may not be enabled when tool_choice forces tool use").
+#              This provider constraint is logged explicitly.
+#   openai:    reasoning.summary="auto" returns a reasoning summary we save.
+#   gemini:    thinking_config.include_thoughts=true tags parts with thought=true.
+
+anthropic:
+  provider: openrouter
+  endpoint_family: openrouter
+  model: anthropic/claude-opus-4.7
+  input_price_per_mtok: 5.00
+  output_price_per_mtok: 25.00
+  temperature: 1.0      # parity: configs/parity.yaml
+  # Opus 4.7 ignores sampling temperature; keep parity value in request/audit.
+  max_tokens: 4000      # parity max_output_tokens equivalent
+  reasoning_effort: medium
+  structured_output: json_schema_strict
+  tool_name: record_diagnosis
+  max_concurrent: 5
+  openrouter_model: anthropic/claude-opus-4.7
+  # Anthropic BYOK is configured in the OpenRouter workspace. The Anthropic
+  # key must be in the Prioritized section with "Always use for this provider"
+  # enabled to prevent shared-capacity fallback.
+  openrouter_byok_required: true
+  openrouter_byok_verification: openrouter_activity_provider_responses
+  openrouter_provider_preferences:
+    order:
+      - anthropic
+    only:
+      - anthropic
+    allow_fallbacks: false
+    require_parameters: false
+
+anthropic_direct:
+  # Legacy key kept so older scripts do not break, but July 10 runs must not
+  # call Anthropic directly. This alias routes through OpenRouter with the same
+  # Anthropic BYOK requirement as the primary `anthropic` key.
+  provider: openrouter
+  endpoint_family: openrouter
+  model: anthropic/claude-opus-4.7
+  input_price_per_mtok: 5.00
+  output_price_per_mtok: 25.00
+  temperature: 1.0
+  omit_temperature: true
+  max_tokens: 4000
+  reasoning_effort: medium
+  structured_output: json_schema_strict
+  structured_method: output_config
+  anthropic_adaptive_thinking: true
+  thinking_display: summarized
+  max_concurrent: 2
+  openrouter_model: anthropic/claude-opus-4.7
+  openrouter_byok_required: true
+  openrouter_byok_verification: openrouter_activity_provider_responses
+  openrouter_provider_preferences:
+    order:
+      - anthropic
+    only:
+      - anthropic
+    allow_fallbacks: false
+    require_parameters: false
+
+openai:
+  provider: openrouter
+  endpoint_family: openrouter
+  model: openai/gpt-5.4
+  input_price_per_mtok: 2.50
+  output_price_per_mtok: 15.00
+  temperature: 1.0
+  reasoning_effort: medium
+  reasoning_summary: auto  # CoT capture (DEV-008)
+  max_output_tokens: 4000  # probe O2 observed 740 output tokens
+  structured_output: json_schema_strict
+  max_concurrent: 5
+  openrouter_model: openai/gpt-5.4
+  openrouter_provider_preferences:
+    only:
+      - openai
+    allow_fallbacks: false
+    require_parameters: false
+
+openai_lowtemp:
+  provider: openrouter
+  endpoint_family: openrouter
+  model: openai/gpt-5.4
+  input_price_per_mtok: 2.50
+  output_price_per_mtok: 15.00
+  temperature: 0.0
+  reasoning_effort: medium
+  reasoning_summary: auto
+  max_output_tokens: 4000
+  structured_output: json_schema_strict
+  max_concurrent: 5
+  openrouter_model: openai/gpt-5.4
+  openrouter_provider_preferences:
+    only:
+      - openai
+    allow_fallbacks: false
+    require_parameters: false
+
+gemini:
+  july10_excluded: true
+  provider: google
+  model: google/gemini-3.1-pro-preview
+  endpoint_family: google_vertex
+  location: global
+  auth: google_cloud_project
+  api: vertex_stream_generate_content
+  api_key_allowed: false
+  input_price_per_mtok: 2.00
+  output_price_per_mtok: 12.00
+  temperature: 1.0
+  max_output_tokens: 4000
+  reasoning_effort: medium
+  thinking_level: medium
+  include_thoughts: true   # CoT capture (DEV-008)
+  structured_output: response_schema
+  max_concurrent: 5
+
+gemini_lowtemp:
+  july10_excluded: true
+  provider: google
+  model: google/gemini-3.1-pro-preview
+  endpoint_family: google_vertex
+  location: global
+  auth: google_cloud_project
+  api: vertex_stream_generate_content
+  api_key_allowed: false
+  input_price_per_mtok: 2.00
+  output_price_per_mtok: 12.00
+  temperature: 0.0
+  max_output_tokens: 4000
+  reasoning_effort: medium
+  thinking_level: medium
+  include_thoughts: true
+  structured_output: response_schema
+  max_concurrent: 5
+
+judge:
+  provider: openrouter
+  endpoint_family: openrouter
+  model: openai/gpt-5.4-nano  # Latest nano tier (released Mar 5, 2026, same day
+                              # as our primary GPT-5.4 VLM). Same GPT-5 family as
+                              # Asadi's §7.3 judge.
+  input_price_per_mtok: 0.20
+  output_price_per_mtok: 1.25
+  openrouter_model: openai/gpt-5.4-nano
+  openrouter_provider_preferences:
+    only:
+      - openai
+    allow_fallbacks: false
+    require_parameters: false
+  # Principle: Asadi §7.3 specified ONLY (model, prompt, output format). Every
+  # other param is left at API default so our invocation literally matches their
+  # invocation (up to the model-version upgrade to nano).
+  # The one exception below is max_output_tokens, which is a runaway-cost safety
+  # cap — Asadi presumably had an implicit cap too since their judge always
+  # terminated. 4000 is generous enough that we never clip a legitimate reply.
+  max_output_tokens: 4000
+  max_concurrent: 20          # our scaling parameter; orthogonal to Asadi protocol
+  # Used ONLY for the Asadi §7.3 Phantom-0 mirage-detection prompt, applied
+  # to the `reasoning` + `key_findings` fields as a belt-and-suspenders check
+  # against the model's self-reported image_present boolean. No diagnosis
+  # categorization judge. Taxonomy mapping is deterministic (src/normalize.py).
+
+qwen3_vl_32b:
+  provider: openrouter
+  endpoint_family: openrouter
+  model: qwen/qwen3-vl-32b-instruct
+  input_price_per_mtok: 0.104
+  output_price_per_mtok: 0.416
+  temperature: 1.0
+  max_output_tokens: 4000
+  reasoning_effort: medium
+  include_reasoning: true
+  structured_output: json_schema_strict
+  max_concurrent: 5
+  openrouter_model: qwen/qwen3-vl-32b-instruct
+  openrouter_provider_preferences:
+    only:
+      - alibaba
+    allow_fallbacks: false
+    require_parameters: false
+
+llama4_maverick:
+  provider: openrouter
+  endpoint_family: openrouter
+  model: meta-llama/llama-4-maverick
+  input_price_per_mtok: 0.15
+  output_price_per_mtok: 0.60
+  temperature: 1.0
+  max_output_tokens: 4000
+  reasoning_effort: medium
+  include_reasoning: true
+  structured_output: json_schema_strict
+  max_concurrent: 5
+  openrouter_model: meta-llama/llama-4-maverick
+  openrouter_provider_preferences:
+    only:
+      - deepinfra
+    allow_fallbacks: false
+    require_parameters: false

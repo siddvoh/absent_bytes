@@ -1,0 +1,13 @@
+domain: brain_mri
+categories:
+  - Glioma
+  - Meningioma
+  - MS
+  - Stroke
+  - Normal
+  - Atrophy
+  - Tumor_Other
+  - Neurosarcoidosis
+  - Chiari
+  - Neurocysticercosis
+  - Other

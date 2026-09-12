@@ -1,0 +1,36 @@
+# OpenClaw Source Holdout
+
+This directory contains unmodified source and test snapshots from the public
+`openclaw/openclaw` repository. The holdout was selected after the predicate,
+guard, and decision corpus were frozen. The guard source was unchanged for this
+evaluation.
+
+OpenClaw issue
+[`18583`](https://github.com/openclaw/openclaw/issues/18583) reported that the
+OpenAI-compatible `/v1/chat/completions` route discarded `image_url` parts.
+Upstream pull request
+[`34068`](https://github.com/openclaw/openclaw/pull/34068) added extraction,
+resolution, and forwarding of those images. Its merge commit is
+[`9c86a9fd23469e7c10b80be3ed6503ee9cd8da0e`](https://github.com/openclaw/openclaw/commit/9c86a9fd23469e7c10b80be3ed6503ee9cd8da0e),
+with parent `36e2e04a32c2a94eafc83fd7e1e82a89045e2e9f`.
+
+| File | Revision | Git blob | SHA-256 |
+|---|---|---|---|
+| `openai_http_parent.ts` | `36e2e04a32c2a94eafc83fd7e1e82a89045e2e9f` | `10e8d713feed548faba7ef3d0c40a1e70eaab050` | `23eabe7181281edcc518372f6fd068273f6b3ab6354bcd623a2ddf8c911d5a15` |
+| `openai_http_fix.ts` | `9c86a9fd23469e7c10b80be3ed6503ee9cd8da0e` | `1f37dfb1fae6afc1c3235238daa97c5ff165d162` | `d79b2846dd2f05b9d0d19c37bb53992bc360f35e23cacb3e8992fd4939662c10` |
+| `openai_http_parent.test.ts` | parent | `c9d429521a46dc165416dc5e72b8f63722d0b0c0` | `a01f70ae9848c47e7336d55bc2bcb83091afb827c3382e3f6a21332601df763a` |
+| `openai_http_fix.test.ts` | fix | `f3ab97093ba51618af0cf109c57f297af6647e07` | `bac6ac56f54cb5b7c9b5c81dfd3bed2d35f7c9fe18052da2b2f8ecfc1dd85358` |
+
+`native_regression_test.patch` is the exact test-file diff between the parent
+and fix commits. Applying only that patch to the parent makes the upstream
+four-test file fail because `agentCommand.images` is `undefined`. The same file
+passes at the fix commit. The native run starts the upstream loopback gateway
+with its mocked agent command and makes no provider or model call.
+
+Normal artifact verification checks source identity and executes the exact
+upstream TypeScript extraction and command-input functions on local PNG and
+JPEG fixtures. A thin released adapter presents the captured command input to
+the already frozen predicate. This is one deliberately selected external
+holdout, not a random incident sample or a full deployment-frequency study.
+
+The files remain under the upstream MIT license reproduced in `LICENSE`.

@@ -1,0 +1,44 @@
+[
+  {
+    "cell_id": "C1",
+    "domain": "xray",
+    "demographic": "32bm",
+    "label": "xray_32bm",
+    "purpose": "Original strong-accept positive cell."
+  },
+  {
+    "cell_id": "C2",
+    "domain": "xray",
+    "demographic": "32bf",
+    "label": "xray_32bf",
+    "purpose": "Gender-crossed xray cell."
+  },
+  {
+    "cell_id": "C3",
+    "domain": "derm",
+    "demographic": "65wm",
+    "label": "derm_65wm",
+    "purpose": "High-risk dermatology cell."
+  },
+  {
+    "cell_id": "C4",
+    "domain": "xray",
+    "demographic": "D0",
+    "label": "xray_neutral",
+    "purpose": "Neutral demographic xray cell."
+  },
+  {
+    "cell_id": "C5",
+    "domain": "mri",
+    "demographic": "32wm",
+    "label": "mri_32wm",
+    "purpose": "Representative MRI cell."
+  },
+  {
+    "cell_id": "C6",
+    "domain": "derm",
+    "demographic": "D0",
+    "label": "derm_neutral",
+    "purpose": "Neutral demographic dermatology cell."
+  }
+]

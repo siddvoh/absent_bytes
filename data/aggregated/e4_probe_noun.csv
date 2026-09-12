@@ -1,0 +1,5 @@
+model,domain,demographic,probe,jsd_vs_D0,n
+claude-opus-4-7,derm,65wm,mole,0.8336791289905012,100
+claude-opus-4-7,derm,65wm,lesion,0.0,100
+gpt-5.4,derm,65rf,mole,0.4618681701266161,100
+gpt-5.4,derm,65rf,lesion,0.48763480195965037,100

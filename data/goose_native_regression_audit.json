@@ -1,0 +1,73 @@
+{
+  "audit_schema_version": 1,
+  "caveats": [
+    "This claim is limited to the exact pinned Goose formatter compiling and this one native regression test failing before and passing after the fix.",
+    "The test is not full Goose application execution and does not establish provider compatibility, production effectiveness, clinical safety, or incident frequency.",
+    "The regression test makes no provider or model calls. Normal verification checks packaged files only and does not require Rust, credentials, or network access.",
+    "The Cargo.lock hash is recorded in the packaged audit and is verified against a supplied clean upstream checkout only when --checkout is requested."
+  ],
+  "execution": {
+    "credentials_required": false,
+    "full_goose_application_started": false,
+    "native_test_provider_or_model_calls": 0,
+    "normal_verification_network_calls": 0,
+    "normal_verification_requires_rust": false
+  },
+  "native_command": "cargo test --locked -p goose --lib test_format_messages_with_text_and_image_preserves_order --no-default-features --features code-mode -- --nocapture",
+  "native_runs": {
+    "fixed": {
+      "commit": "984967141376c77f424bcedf4d7ab35756753911",
+      "exit_status": 0,
+      "failed": 0,
+      "matched_test_count": 1,
+      "passed": 1,
+      "result": "passed"
+    },
+    "parent_with_test_only_patch": {
+      "assertion": "expected text + image entries; left: 1; right: 2",
+      "commit": "18bc030e48e032ebf65a7488b316cfbd966c0a16",
+      "exit_status": 101,
+      "failed": 1,
+      "matched_test_count": 1,
+      "passed": 0,
+      "result": "failed"
+    }
+  },
+  "patch": {
+    "file": "third_party/goose/native_regression_test.patch",
+    "kind": "test_only",
+    "sha256": "e9aed21f38347507052604bc5a06745a00ebff150329cb60c6cb238f697ab278",
+    "test_source_sha256": "76a32b51eba86a2adc0bd5ee509f4f3dc8d82fdf51a98b98ad07cccc19132178"
+  },
+  "source": {
+    "cargo_lock": {
+      "git_blob_sha1": "27a8e5c9f437215404a71fb5a6547da95a61cbb1",
+      "path": "Cargo.lock",
+      "sha256": "32f2dcdc1fc9672c953390f4eb83ba2c5caf0d69ad4c2d4b85add16c6c8bbad8"
+    },
+    "fix_commit": "984967141376c77f424bcedf4d7ab35756753911",
+    "parent_commit": "18bc030e48e032ebf65a7488b316cfbd966c0a16",
+    "project": "aaif-goose/goose",
+    "source_file": "crates/goose/src/providers/formats/openai.rs",
+    "source_files": {
+      "fixed": {
+        "commit": "984967141376c77f424bcedf4d7ab35756753911",
+        "file": "third_party/goose/openai_after.rs",
+        "git_blob_sha1": "28420888a01a7448dc68e839e774e17f50dbb23e",
+        "sha256": "2b024fecbbc99f51a2890ff19fc83e5887d09cb757edbb283817e0f2a402d9f2"
+      },
+      "parent": {
+        "commit": "18bc030e48e032ebf65a7488b316cfbd966c0a16",
+        "file": "third_party/goose/openai_before.rs",
+        "git_blob_sha1": "c696cb8e34d22415c40973b73de16da3f07ff03c",
+        "sha256": "7f20b9a21ba546ad3dfbddb93669d1f2b9c85fd671c814d2387f8c5ff6e7df2b"
+      }
+    },
+    "test_name": "providers::formats::openai::tests::test_format_messages_with_text_and_image_preserves_order",
+    "toolchain": {
+      "cargo": "cargo 1.92.0 (344c4567c 2025-10-21)",
+      "rustc": "rustc 1.92.0 (ded5c06cf 2025-12-08)",
+      "target": "aarch64-apple-darwin"
+    }
+  }
+}

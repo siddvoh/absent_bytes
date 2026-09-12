@@ -1,0 +1,4 @@
+provider,demographic_jsd_max,e2b_paraphrase_floor_max,ratio
+Claude Opus 4.7,0.834,0.079,10.5
+GPT-5.4,0.590,0.043,13.9
+Gemini 3.1 Pro,0.045,0.015,3.0
